@@ -6,9 +6,9 @@ A training set in supervised learning includes both the input features and the o
 - 训练集：training set  
 - 训练样本的总数：m = number of training examples  
 - 单个的训练样本：(x, y) = single training example  
-- 第i个训练样本：(x⁽ⁱ⁾, y⁽ⁱ⁾) = ith training example，其中i: a specific row in the table  
+- 第i个训练样本：(x⁽ⁱ⁾, y⁽ⁱ⁾) = ith training example，i: a specific row in the table  
 
-training -> learning algorithm -> f（x -> f -> ŷ）
+ **training -> learning algorithm -> f（x -> f -> ŷ）**
 
 - 通过函数预测的值y-hat (ŷ)：an estimate or a prediction  
 - 训练集中的实际真实值y（only letter y）：the actual true value in the training set  
