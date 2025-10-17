@@ -118,7 +118,7 @@ plt.show()
 <img width="497" height="337" alt="image" src="https://github.com/user-attachments/assets/6da54b5d-dd46-4ec2-89f2-cfcc923f53ff" />
 
 
-# Model function
+# Model function   函数模型
 <img width="531" height="324" alt="image" src="https://github.com/user-attachments/assets/9ff1a361-ef0f-4c15-aa55-48f8f7b515c1" />
 
 the model function for linear regression (which is a function that maps from x to y )       x -> y
@@ -205,7 +205,7 @@ plt.show()
 
 setting w = 100 and b = 100 does not result in a line that fits datas.
 
-# Prediction
+# Prediction  预测
 
 Now that we have a model, we can use it to make our original prediction. 
 
