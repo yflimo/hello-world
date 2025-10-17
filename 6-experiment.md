@@ -93,3 +93,23 @@ Output:
 (x^(0), y^(0)) = (1.0, 300.0)
 ```
 
+## Plotting the data  绘制数据
+
+plot these two points using the `scatter()` function in the `matplotlib` library
+
+
+- The function arguments `marker` and `c` show the points as red crosses红色叉号 (the default is blue dots默认为蓝色圆点).
+
+use other functions in the `matplotlib` library to set the title标题 and labels标签 to display
+
+```python
+# Plot the data points 绘制数据点
+plt.scatter(x_train, y_train, marker='x', c='r')
+# Set the title设置标题
+plt.title("Housing Prices")
+# Set the y-axis label 设置y轴标签
+plt.ylabel('Price (in 1000s of dollars)')
+# Set the x-axis label 设置x轴标签
+plt.xlabel('Size (1000 sqft)')
+plt.show()
+```
