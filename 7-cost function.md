@@ -32,7 +32,7 @@ To find $w,b$ that ${\hat{y}}^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^
 
 b=0
 
-$f_{w,b}(x^{(i)}) = w x^{(i)} + b$
+$f_{w,b}(x^{(i)}) = w x^{(i)}$
 
 - **w=1**:
 
@@ -44,6 +44,7 @@ $x^{(3)} = 3, y^{(3)} = 3, f_w(x^{(3)}) = 3$
 
 $J(1) = \frac{1}{2*3} \times [(1 - 1)^2 + (2 - 2)^2 + (3 - 3)^2] = 0$
 
+<img width="389" height="334" alt="image" src="https://github.com/user-attachments/assets/cba5d675-5225-4e8e-8654-e4cf62fb7612" />
 
 - **w=0.5**:
 
@@ -55,6 +56,7 @@ $x^{(3)} = 3, y^{(3)} = 3, f_{0.5}(x^{(3)}) = 1.5$
 
 $J(0.5) = \frac{1}{2*3} \times [(0.5 - 1)^2 + (1 - 2)^2 + (1.5 - 3)^2] = \frac{7}{12}$
 
+<img width="416" height="290" alt="image" src="https://github.com/user-attachments/assets/3ae43850-68e1-4f76-9054-f9575a62923a" />
 
 - **w=0**:
 
@@ -66,13 +68,14 @@ $x^{(3)} = 3, y^{(3)} = 3, f_0(x^{(3)}) = 0$
 
 $J(0) = \frac{1}{2*3} \times [(0 - 1)^2 + (0 - 2)^2 + (0 - 3)^2] = \frac{7}{3}$
 
+<img width="383" height="248" alt="image" src="https://github.com/user-attachments/assets/49fe9835-da2b-4975-9e70-fd0e723ca035" />
 
-- **w=1.5**:
+**J(w):**
 
-$x^{(1)} = 1, y^{(1)} = 1, f_{1.5}(x^{(1)}) = 1.5$
+<img width="362" height="360" alt="image" src="https://github.com/user-attachments/assets/ab68257d-c694-4c24-8713-fde4a8de4728" />
 
-$x^{(2)} = 2, y^{(2)} = 2, f_{1.5}(x^{(2)}) = 3$
+w=1,
 
-$x^{(3)} = 3, y^{(3)} = 3, f_{1.5}(x^{(3)}) = 4.5$
+$$\underset{w=1}{\text{minimize }} J(w, b)$$
 
-$J(1.5) = \frac{1}{2*3} \times [(1.5 - 1)^2 + (3 - 2)^2 + (4.5 - 3)^2] = \frac{7}{12}$
+
