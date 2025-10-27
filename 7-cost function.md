@@ -18,6 +18,7 @@ $$J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left( \hat{y}^{(i)} - y^{(i)} \right)^2$$
 $$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)}) - y^{(i)}\right)^2$$
 
 To measures the difference between the model's predictions and the actual true values for y.
+
 To find $w,b$ that ${\hat{y}}^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^{(i)})$
 
 **How the cost function can be used to find the best parameters for model?**
@@ -25,4 +26,8 @@ To find $w,b$ that ${\hat{y}}^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^
 - **model:** $f_{w,b}(x^{(i)}) = w x^{(i)} + b$
 - **parameters:** w,b
 - **cost function:** $$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)}) - y^{(i)}\right)^2$$
-- **goal:** to find values for w and b that make J(w,b) as small as possible.
+- **goal:** $$\underset{w,b}{\text{minimize }} J(w, b)$$
+
+ The goal is to find values for w and b that make J(w,b) as small as possible.
+
+ 
