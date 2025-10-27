@@ -4,15 +4,26 @@
 
  
 - **model**: $f_{w,b}(x^{(i)}) = w x^{(i)} + b$
-- **$\boldsymbol{\hat{y}}$**: prediction     ${\hat{y}}^{(i)} = f_{w,b}(x^{(i)}) = w x^{(i)} + b$
+- **$\hat{y}$**: prediction     ${\hat{y}}^{(i)} = f_{w,b}(x^{(i)}) = w x^{(i)} + b$
 - **y**: target
 - **m**: number of training examples
 - **w,b**: parameters参数, coefficients系数, weights权重
 
 find $w,b$ :  ${\hat{y}}^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^{(i)})$
 
+To measures the difference between the model's predictions and the actual true values for y.
+
 Build a cost function that doesn't automatically get bigger as the training set size gets larger.
+
+**Cost Function:**
 
 $$J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left( \hat{y}^{(i)} - y^{(i)} \right)^2$$
 
 $$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)}) - y^{(i)}\right)^2$$
+
+**How the cost function can be used to find the best parameters for model?**
+
+- **model:** $f_{w,b}(x^{(i)}) = w x^{(i)} + b$
+- **parameters:** w,b
+- **cost function:** $$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)}) - y^{(i)}\right)^2$$
+- **goal:** to find values for w and b that make J(w,b) as small as possible.
