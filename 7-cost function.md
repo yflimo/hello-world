@@ -74,8 +74,6 @@ $J(0) = \frac{1}{2*3} \times [(0 - 1)^2 + (0 - 2)^2 + (0 - 3)^2] = \frac{7}{3}$
 
 <img width="362" height="360" alt="image" src="https://github.com/user-attachments/assets/ab68257d-c694-4c24-8713-fde4a8de4728" />
 
-w=1,
-
-$$\underset{w=1}{\text{minimize }} J(w, b)$$
+$$\underset{w=1}{\text{minimize }} J(w, b)=0$$
 
 
