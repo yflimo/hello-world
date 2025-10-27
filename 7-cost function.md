@@ -4,7 +4,7 @@
 
  
 - **model**: $f_{w,b}(x^{(i)}) = w x^{(i)} + b$
-- **y-hat**: prediction     ${\hat{y}}^{(i)} = f_{w,b}(x^{(i)}) = w x^{(i)} + b$
+- **$\boldsymbol{\hat{y}}$**: prediction     ${\hat{y}}^{(i)} = f_{w,b}(x^{(i)}) = w x^{(i)} + b$
 - **y**: target
 - **m**: number of training examples
 - **w,b**: parameters参数, coefficients系数, weights权重
