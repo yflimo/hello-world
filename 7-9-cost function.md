@@ -30,7 +30,11 @@ To find $w,b$ that ${\hat{y}}^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^
 
  The goal is to find values for w and b that make J(w,b) as small as possible.
 
-b=0
+### b=0:
+- **model:** $f_{w}(x^{(i)}) = w x^{(i)}$
+- **parameters:** w
+- **cost function:** $$J(w) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w}(x^{(i)}) - y^{(i)}\right)^2$$
+- **goal:** $$\underset{w}{\text{minimize }} J(w)$$
 
 $f_{w,b}(x^{(i)}) = w x^{(i)}$
 
@@ -76,4 +80,18 @@ $J(0) = \frac{1}{2*3} \times [(0 - 1)^2 + (0 - 2)^2 + (0 - 3)^2] = \frac{7}{3}$
 
 $$\underset{w=1}{\text{minimize }} J(w, b)=0$$
 
+
+## Visualizing the Cost Function
+
+**3D bow-shaped surface plot** ---visualized--> **contour plot**
+
+### b!=0
+- **model:** $f_{w,b}(x^{(i)}) = w x^{(i)} + b$
+- **parameters:** w,b
+- **cost function:** $$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)}) - y^{(i)}\right)^2$$
+- **goal:** $$\underset{w,b}{\text{minimize }} J(w, b)$$
+
+<img width="1135" height="800" alt="image" src="https://github.com/user-attachments/assets/4c8d4118-8a4e-4032-b3f6-03f15e3c0e6a" />
+
+<img width="935" height="665" alt="image" src="https://github.com/user-attachments/assets/18bf2316-92ae-4a2a-a93a-722901b9855d" />
 
