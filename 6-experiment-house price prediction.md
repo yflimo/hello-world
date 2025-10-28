@@ -212,15 +212,16 @@ Now that we have a model, we can use it to make our original prediction.
 Let's predict the price of a house with 1200 sqft. Since the units of x are in 1000's of sqft, x  is 1.2.
 
 ```python
-w = 200
-b = 100
 x_i = 1.2
 cost_1200sqft = w * x_i + b
 
 print(f"${cost_1200sqft:.0f} thousand dollars")
 ```
 
-
+Output:  
+```
+$220 thousand dollars
+```  
 
 ```python
 import numpy as np
@@ -281,6 +282,11 @@ plt.xlabel('Size (1000 sqft)')
 
 plt.legend()  # 显示图例（区分预测线和实际点）
 plt.show()  # 显示图表
+x_i = 1.2
+cost_1200sqft = w * x_i + b
+
+print(f"${cost_1200sqft:.0f} thousand dollars")
 ```
-<img width="634" height="1108" alt="image" src="https://github.com/user-attachments/assets/0679fab8-d84f-4059-b2b3-23b52fec907c" />
+<img width="638" height="1130" alt="image" src="https://github.com/user-attachments/assets/63c94cff-7c6a-418f-b537-e960b5c773c1" />
+
 
