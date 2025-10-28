@@ -107,7 +107,7 @@ plot these two points using the `scatter()` function in the `matplotlib` library
 use other functions in the `matplotlib` library to set the title标题 and labels标签 to display
 
 ```python
-# Plot the data points 绘制数据点
+# Plot the data points 绘制数据点   marker='x'：指定点的形状为叉号（×）  c='r'：指定点的颜色为红色
 plt.scatter(x_train, y_train, marker='x', c='r')
 # Set the title 设置标题
 plt.title("Housing Prices")
