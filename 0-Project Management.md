@@ -7,12 +7,11 @@
 生成一个名为 .venv 的文件夹，里面装的就是一个独立的 Python 解释器和库路径。
 
 
-### **source .venv/bin/activate  (Linux or macOS)**
-
 ### **.venv\Scripts\activate     (Windows(PowerShell))**
 
-进入这个环境。
+source .venv/bin/activate  (Linux or macOS)
 
+进入这个环境。
 
 ### **uv pip install -e.**
 
