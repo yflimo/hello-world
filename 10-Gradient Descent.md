@@ -7,15 +7,15 @@
 **3) Until settle at or near a minimum (may have >1 minimum)**
 
 
-**apply：**
+**Apply：**
 - linear regression  （For linear regression with the squared error cost function always end up with a bowl shape or a hammock shape.
 
 - training for some of the most advanced neural network models.(Deep learning models)
 
 
-the direction of steepest descent    ->...(repeat the process)->   until find local minimum
+the direction of steepest descent    ->...(repeat the process)->    until find local minimum
 
-choose a different starting point will end up in different minimum
+choose a different starting point will end up in different minimum.
 
 start going down the first minimum ,gradient descent won't lead to the second minimum.And the same is ture if started going down the second minimum.
 
