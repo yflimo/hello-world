@@ -66,12 +66,12 @@ def compute_cost(x, y, w, b):
 
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/b2a21074-80ac-4dcb-80c9-390c9d6e10c3" />
 
-**goal：** To find a model \( f_{w,b}(x) = wx + b \), with parameters w, b , which will accurately predict house values given an input x.
+**Goal：** To find a model $$f_{w,b}(x) = wx + b$$ , with parameters w , b, which will accurately predict house values given an input x.
 The cost is a measure of how accurate the model is on the training data.
 
-The cost equation(1) shows that if  w  and  b  can be selected such that the predictions \( f_{w,b}(x) \) match the target data  y , the \( (f_{w,b}(x^{(i)}) - y^{(i)})^2 \) term will be zero and the cost minimized. In this simple two-point example, you can achieve this!
+The cost equation shows that if w and b can be selected such that the predictions $$f_{w,b}(x)$$ match the target data y , the $$\left(f_{w,b}\left(x^{(i)}\right) - y^{(i)}\right)^2$$ term will be zero and the cost minimized. 
 
-In the previous lab,  determined that  b = 100 provided an optimal solution so let’s set b to 100 and focus on  w.
+In the previous lab, determined that b = 100 provided an optimal solution so let’s set b to 100 and focus on w .
 
 Below, use the slider control to select the value of w that minimizes cost. It can take a few seconds for the plot to update.
 
@@ -81,5 +81,19 @@ plt_intuition(x_train, y_train)
 
 - Cost is minimized when w = 200 , which matches results from the previous lab.
 - Because the difference between the target and prediction is squared in the cost equation, the cost increases rapidly when  w is either too large or too small.
-- Using the  w  and b selected by minimizing cost results in a line which is a perfect fit to the data.
+- Using the w and b selected by minimizing cost results in a line which is a perfect fit to the data.
 
+# Cost Function Visualization- 3D
+
+```python
+x_train = np.array([1.0, 1.7, 2.0, 2.5, 3.0, 3.2])
+y_train = np.array([250, 300, 480, 430, 630, 730,])
+```
+
+In the contour plot, click on a point to select \( w \) and \( b \) to achieve the lowest cost. Use the contours to guide your selections. 
+
+```python
+plt.close('all')
+fig, ax, dyn_items = plt_stationary(x_train, y_train)
+updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)
+```
