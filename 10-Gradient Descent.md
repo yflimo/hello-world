@@ -19,5 +19,11 @@ choose a different starting point will end up in different minimum.
 
 start going down the first minimum ,gradient descent won't lead to the second minimum.And the same is ture if started going down the second minimum.
 
+# Gradient Descent Algorithm
 
-
+```markdown
+tmp_w = w - α∂/∂w J(w, b)    (1)
+tmp_b = b - α∂/∂b J(w, b)    (2)
+w = tmp_w                    (3)
+b = tmp_b                    (4)
+```
