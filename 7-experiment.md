@@ -62,4 +62,28 @@ def compute_cost(x, y, w, b):
 
     return total_cost
 ```
+# Cost  Function Intuition
+
 <img width="1787" height="912" alt="image" src="https://github.com/user-attachments/assets/b2a21074-80ac-4dcb-80c9-390c9d6e10c3" />
+
+Your goal is to find a model \( f_{w,b}(x) = wx + b \), with parameters \( w, b \), which will accurately predict house values given an input \( x \).
+The cost is a measure of how accurate the model is on the training data.
+
+The cost equation shows that if \( w \) and \( b \) can be selected such that the predictions \( f_{w,b}(x) \) match the target data \( y \), the \( (f_{w,b}(x^{(i)}) - y^{(i)})^2 \) term will be zero and the cost minimized. In this simple two-point example, you can achieve this!
+
+In the previous lab, you determined that \( b = 100 \) provided an optimal solution so let’s set \( b \) to 100 and focus on \( w \).
+
+Below, use the slider control to select the value of \( w \) that minimizes cost. It can take a few seconds for the plot to update.
+
+```python
+plt_intuition(x_train, y_train)
+```
+```python
+interactive(children=(IntSlider(value=150, description='w', max=400, step=10), Output()), _dom_classes=('widge…
+```
+
+
+- Cost is minimized when \( w = 200 \), which matches results from the previous lab.
+- Because the difference between the target and prediction is squared in the cost equation, the cost increases rapidly when \( w \) is either too large or too small.
+- Using the \( w \) and \( b \) selected by minimizing cost results in a line which is a perfect fit to the data.
+
