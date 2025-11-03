@@ -24,3 +24,19 @@ source .venv/bin/activate  (Linux or macOS)
 ### **rm -rf .venv/**  
 
 是删除整个虚拟环境文件夹
+
+
+<img width="500" height="389" alt="image" src="https://github.com/user-attachments/assets/1cbeb0c0-e8bf-48d0-86c9-9585a78fc438" />
+
+
+dataset/Boston.csv                	存放数据文件
+
+README.md         	                项目说明文件，介绍项目背景、使用方法等
+
+boston_house_price_prediction.py		实现模型训练与预测的主要逻辑
+
+main.py		                          程序入口文件，用来运行整个项目
+
+plotting.py	                      	负责绘图
+
+pyproject.toml	                    配置文件	Python项目配置文件，通常定义依赖、项目元数据
