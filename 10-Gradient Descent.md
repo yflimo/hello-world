@@ -27,3 +27,7 @@ tmp_b = b - α∂/∂b J(w, b)    (2)
 w = tmp_w                    (3)
 b = tmp_b                    (4)
 ```
+
+α：learning rate;0-1;usually a small positive number between 0 and 1;control how big of a step take downhill;
+
+
