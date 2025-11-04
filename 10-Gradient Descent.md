@@ -28,7 +28,7 @@ w = tmp_w                    (3)
 b = tmp_b                    (4)
 ```
 
-α：learning rate;0-1;usually a small positive number between 0 and 1;control how big of a step take downhill;
+**α：** learning rate;0-1;usually a small positive number between 0 and 1;control how big of a step take downhill;
 
 (3) and (4) must come after (1) and (2) to ensure **simultaneous updates**
 
