@@ -36,10 +36,12 @@ Repeat the above operation until **convergence**
 
 **convergence:** reach the point at a local minimum where the parameters w and b no longer change much with each additional step that take.
 
-b=0:
+- **b=0:**
 
-w = w - α ∂/∂w J(w)
+**w = w - α ∂/∂w J(w)**
 
-1) ∂/∂w J(w)>0  k>0 0<α<1 w↓ w moves to the right    J(w)↓
+**1) ∂/∂w J(w)>0  k>0 0<α<1 w↓ w moves to the right**
    
-2) ∂/∂w J(w)<0  k<0 0<α<1 w↑ w moves to the left     J(w)↓
+**2) ∂/∂w J(w)<0  k<0 0<α<1 w↑ w moves to the left**
+
+**In both 1) and 2), w is moving in the direction where J(w) is decreasing**
