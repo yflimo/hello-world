@@ -56,7 +56,7 @@ In both 1) and 2), w is moving in the direction where J(w) is decreasing
 
 ## Learning Rate α
 
-Can reach local minimum with fixed learning rate.
+Can reach local minimum with **fixed** learning rate.
 
 w = w - α $\frac{d}{dw}$ J(w)
 
@@ -68,4 +68,8 @@ k↓, $\frac{d}{dw}$ J(w) ↓,Δw↓,until $\frac{d}{dw}$ J(w)=0
 
 As we get nearer a local minimum, gradient descent will automatically take smaller steps, because as approach the local minimum,the derivative automatically gets smaller.
 
- **Near a local minimum, Derivative becomes smaller, Update steps becomes smaller**
+ Near a local minimum, 
+ 
+ -Derivative becomes smaller, 
+ 
+ -Update steps becomes smaller.
