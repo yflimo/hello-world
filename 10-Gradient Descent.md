@@ -56,4 +56,20 @@ In both 1) and 2), w is moving in the direction where J(w) is decreasing
 
 ## Learning Rate α
 
+Can reach local minimum with fixed learning rate.
 
+w = w - α $\frac{d}{dw}$ J(w)
+
+k↓,$\frac{d}{dw}$ J(w)↓,Δw↓,until $\frac{d}{dw}$ J(w)=0
+
+- If α too small, Gradient descent may be slow
+
+- If α too large, Gradient descent may Overshoot,never reach minimum; Fail to converge,even diverge;
+
+As we get nearer a local minimum, gradient descent will automatically take smaller steps, because as approach the local minimum,the derivative automatically gets smaller.
+
+Near a local minimum,
+
+-Derivative becomes smaller
+
+-Update steps becomes smaller
