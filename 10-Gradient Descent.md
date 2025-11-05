@@ -8,9 +8,9 @@
 
 
 **Apply：**
-- linear regression  （For linear regression with the squared error cost function always end up with a bowl shape or a hammock shape.
+- Linear Regression  （For linear regression with the squared error cost function always end up with a bowl shape or a hammock shape.
 
-- training for some of the most advanced neural network models.(Deep learning models)
+- Training for some of the most advanced neural network models.(Deep learning models)
 
 
 the direction of steepest descent    ->...(repeat the process)->    until find local minimum
@@ -66,6 +66,6 @@ k↓, $\frac{d}{dw}$ J(w) ↓,Δw↓,until $\frac{d}{dw}$ J(w)=0
 
 - If α too **large**, Gradient descent may Overshoot,never reach minimum; Fail to converge,even diverge;
 
-   As we get nearer a local minimum, gradient descent will automatically take smaller steps, because as approach the local minimum,the derivative automatically gets smaller.
+As we get nearer a local minimum, gradient descent will automatically take smaller steps, because as approach the local minimum,the derivative automatically gets smaller.
 
  **Near a local minimum, Derivative becomes smaller, Update steps becomes smaller**
