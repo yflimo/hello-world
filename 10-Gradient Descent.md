@@ -32,16 +32,24 @@ b = tmp_b                    (4)
 
 (3) and (4) must come after (1) and (2) to ensure **simultaneous updates**
 
-Repeat the above operation until **convergence**
+Repeat (1)-(4) until **convergence**
 
 **convergence:** reach the point at a local minimum where the parameters w and b no longer change much with each additional step that take.
 
-- **b=0:**
+## Gradient Descent Intuition
 
-**w = w - α ∂/∂w J(w)**
+<img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/4fda59a9-56fd-4dc4-8c7b-7ed55bb357f9" />
 
-**1) ∂/∂w J(w)>0  k>0 0<α<1 w↓ w moves to the right**
+**b=0:w = w - α ∂/∂w J(w)**
+
+**1) ∂/∂w J(w)>0 ,k>0 ,0<α<1 ,w↓ ,w moves to the right**
+
+     w=w-α*(positive number)
    
-**2) ∂/∂w J(w)<0  k<0 0<α<1 w↑ w moves to the left**
+**2) ∂/∂w J(w)<0 ,k<0 ,0<α<1 ,w↑ ,w moves to the left**
 
-**In both 1) and 2), w is moving in the direction where J(w) is decreasing**
+     w=w-α*(negative number)
+
+In both 1) and 2), w is moving in the direction where J(w) is decreasing
+
+
