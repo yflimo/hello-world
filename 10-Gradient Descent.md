@@ -68,8 +68,8 @@ k↓, $\frac{d}{dw}$ J(w) ↓,Δw↓,until $\frac{d}{dw}$ J(w)=0
 
 As we get nearer a local minimum, gradient descent will automatically take smaller steps, because as approach the local minimum,the derivative automatically gets smaller.
 
- Near a local minimum, 
+ **Near a local minimum:**
  
- -Derivative becomes smaller, 
+ **-Derivative becomes smaller,** 
  
- -Update steps becomes smaller.
+ **-Update steps becomes smaller.**
