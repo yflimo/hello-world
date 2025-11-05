@@ -73,3 +73,17 @@ As we get nearer a local minimum, gradient descent will automatically take small
  **-Derivative becomes smaller,** 
  
  **-Update steps becomes smaller.**
+
+
+ ## Gradient Descent for Linear Regression
+
+- **Linear regression model:** $f_{w}(x^{(i)}) = w x^{(i)}$
+- **Cost function:** $$J(w) = \frac{1}{2m}\sum_{i=1}^{m}\left(f_{w}(x^{(i)}) - y^{(i)}\right)^2$$
+- **Gradient Descent algorithm :**
+repeat until convergence{
+
+w = w - α $\frac{d}{dw}$ J(w,b)
+
+b = b - α $\frac{d}{db}$ J(w,b)
+
+}
