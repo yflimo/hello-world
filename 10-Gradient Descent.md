@@ -35,3 +35,11 @@ b = tmp_b                    (4)
 Repeat the above operation until **convergence**
 
 **convergence:** reach the point at a local minimum where the parameters w and b no longer change much with each additional step that take.
+
+b=0:
+
+w = w - α ∂/∂w J(w)
+
+1) ∂/∂w J(w)>0  k>0 0<α<1 w↓ w moves to the right    J(w)↓
+   
+2) ∂/∂w J(w)<0  k<0 0<α<1 w↑ w moves to the left     J(w)↓
