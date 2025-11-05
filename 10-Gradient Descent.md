@@ -19,7 +19,7 @@ choose a different starting point will end up in different minimum.
 
 start going down the first minimum ,gradient descent won't lead to the second minimum.And the same is ture if started going down the second minimum.
 
-# Gradient Descent Algorithm
+## Gradient Descent Algorithm
 
 ```markdown
 tmp_w = w - α∂/∂w J(w, b)    (1)
@@ -51,5 +51,7 @@ Repeat (1)-(4) until **convergence**
      w=w-α*(negative number)
 
 In both 1) and 2), w is moving in the direction where J(w) is decreasing
+
+## Learning Rate α
 
 
