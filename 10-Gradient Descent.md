@@ -89,3 +89,23 @@ As we get nearer a local minimum, gradient descent will automatically take small
 
     }
 
+$\frac{d}{dw} J(w,b) = \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right) x^{(i)}$
+
+$\frac{d}{db} J(w,b) = \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right)$
+
+
+repeat until convergence{
+
+$w = w - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right) x^{(i)}$
+
+$b = b - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right)$
+
+}
+
+<img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/0eeb06b7-7527-47bb-925c-df513df44510" />
+
+<img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/40b7d6ac-70d8-4f96-82bb-6ecd008d75f6" />
+
+<img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/627870d3-4139-40fe-be81-4dacff7a788c" />
+
+
