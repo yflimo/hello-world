@@ -21,12 +21,13 @@ start going down the first minimum ,gradient descent won't lead to the second mi
 
 ## Gradient Descent Algorithm
 
-```markdown
-tmp_w = w - α∂/∂w J(w, b)    (1)
-tmp_b = b - α∂/∂b J(w, b)    (2)
-w = tmp_w                    (3)
-b = tmp_b                    (4)
-```
+**tmp_w = w - α $\frac{d}{dw}$ J(w,b)    (1)**
+
+**tmp_b = b - α $\frac{d}{db}$ J(w,b)    (2)**
+
+**w = tmp_w                    (3)**
+
+**b = tmp_b                    (4)**
 
 **α：** learning rate;0-1;usually a small positive number between 0 and 1;control how big of a step take downhill;
 
@@ -40,13 +41,14 @@ Repeat (1)-(4) until **convergence**
 
 <img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/4fda59a9-56fd-4dc4-8c7b-7ed55bb357f9" />
 
-**b=0:w = w - α ∂/∂w J(w)**
+**b=0:  w = w - α $\frac{d}{dw}$ J(w)**
 
-**1) ∂/∂w J(w)>0 ,k>0 ,0<α<1 ,w↓ ,w moves to the right**
+
+**1) $\frac{d}{dw}$ J(w)>0 ,k>0 ,0<α<1 ,w↓ ,w moves to the right**
 
      w=w-α*(positive number)
    
-**2) ∂/∂w J(w)<0 ,k<0 ,0<α<1 ,w↑ ,w moves to the left**
+**2) $\frac{d}{dw}$ J(w) ,k<0 ,0<α<1 ,w↑ ,w moves to the left**
 
      w=w-α*(negative number)
 
