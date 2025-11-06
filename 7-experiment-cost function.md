@@ -38,6 +38,7 @@ In each loop:
 - this is added to the total cost.
 
 ```python
+#定义成本函数
 def compute_cost(x, y, w, b):
     """
     Computes the cost function for linear regression.
@@ -93,7 +94,34 @@ y_train = np.array([250, 300, 480, 430, 630, 730,])
 In the contour plot, click on a point to select \( w \) and \( b \) to achieve the lowest cost. Use the contours to guide your selections. 
 
 ```python
+plt.close('all')   #关闭当前所有打开的图形窗口
+#创建一个交互式图表，可以点击图中不同的 w 和 b，看到预测线和 cost 值如何变化
+fig, ax, dyn_items = plt_stationary(x_train, y_train)
+updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)
+soup_bowl()    #显示成本函数的3D形状图。它看起来像个“汤碗”——最低点就是最优解。
+```
+
+
+```python
+import numpy as np
+%matplotlib notebook
+import matplotlib.pyplot as plt
+from lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
+x_train = np.array([1.0, 1.7, 2.0, 2.5, 3.0, 3.2])
+y_train = np.array([250, 300, 480,  430,   630, 730,])
+
+def compute_cost(x, y, w, b):
+    m = x.shape[0]
+    cost_sum = 0
+    for i in range(m):
+        f_wb = w * x[i] + b
+        cost = (f_wb - y[i]) ** 2
+        cost_sum = cost_sum + cost
+    total_cost = (1 / (2 * m)) * cost_sum
+    return total_cost
+plt_intuition(x_train,y_train)
 plt.close('all')
 fig, ax, dyn_items = plt_stationary(x_train, y_train)
 updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)
+soup_bowl()
 ```
