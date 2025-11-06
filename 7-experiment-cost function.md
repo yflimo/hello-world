@@ -19,7 +19,6 @@ plt.style.use('./deeplearning.mplstyle')
 | 2                | 500                      |
 
 ```python
-# In [3]:
 x_train = np.array([1.0, 2.0])  # (size in 1000 square feet)
 y_train = np.array([300.0, 500.0])  # (price in 1000s of dollars)
 ```
@@ -77,6 +76,7 @@ In the previous lab, determined that b = 100 provided an optimal solution so let
 Below, use the slider control to select the value of w that minimizes cost. It can take a few seconds for the plot to update.
 
 ```python
+#展示一条线（预测函数）如何通过数据点。预测越接近点 → 误差越小
 plt_intuition(x_train, y_train)
 ```
 
