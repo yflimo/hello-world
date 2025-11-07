@@ -125,3 +125,10 @@ fig, ax, dyn_items = plt_stationary(x_train, y_train)
 updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)
 soup_bowl()
 ```
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/9a88a19b-1b87-43d5-b60e-392fd2d25ded" />
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/c28abefa-6ba8-4839-bd40-d20f5cc4ff04" />
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/fa6add22-5d65-43ee-a398-eea0e56b8fc6" />
+
+
