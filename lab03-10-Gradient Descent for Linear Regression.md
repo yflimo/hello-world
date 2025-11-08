@@ -212,27 +212,8 @@ w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_
 print(f"(w,b) found by gradient descent: ({w_final:8.4f},{b_final:8.4f})")
 ```
 
-Iteration    0: Cost 7.93e+04  dj_dw: -6.500e+02, dj_db: -4.000e+02   w:  6.500e+00, b: 4.00000e+00
+===========================
 
-Iteration 1000: Cost 3.41e+00  dj_dw: -3.712e-01, dj_db:  6.007e-01   w:  1.949e+02, b: 1.08228e+02
-
-Iteration 2000: Cost 7.93e-01  dj_dw: -1.789e-01, dj_db:  2.895e-01   w:  1.975e+02, b: 1.03966e+02
-
-Iteration 3000: Cost 1.84e-01  dj_dw: -8.625e-02, dj_db:  1.396e-01   w:  1.988e+02, b: 1.01912e+02
-
-Iteration 4000: Cost 4.28e-02  dj_dw: -4.158e-02, dj_db:  6.727e-02   w:  1.994e+02, b: 1.00922e+02
-
-Iteration 5000: Cost 9.95e-03  dj_dw: -2.004e-02, dj_db:  3.243e-02   w:  1.997e+02, b: 1.00444e+02
-
-Iteration 6000: Cost 2.31e-03  dj_dw: -9.660e-03, dj_db:  1.563e-02   w:  1.999e+02, b: 1.00214e+02
-
-Iteration 7000: Cost 5.37e-04  dj_dw: -4.657e-03, dj_db:  7.535e-03   w:  1.999e+02, b: 1.00103e+02
-
-Iteration 8000: Cost 1.25e-04  dj_dw: -2.245e-03, dj_db:  3.632e-03   w:  2.000e+02, b: 1.00050e+02
-
-Iteration 9000: Cost 2.90e-05  dj_dw: -1.082e-03, dj_db:  1.751e-03   w:  2.000e+02, b: 1.00024e+02
-
-(w,b) found by gradient descent: (199.9929,100.0116)
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bdec6c3d-d96f-448d-a5eb-7d2537f6fbf6" />
 
@@ -257,6 +238,22 @@ ax1.set_ylabel('Cost')            ;  ax2.set_ylabel('Cost')
 ax1.set_xlabel('iteration step')  ;  ax2.set_xlabel('iteration step') 
 ```
 
+=========================
+
+### Predictions
+
+Now that you have discovered the optimal values for the parameters w and b, you can now use the model to predict housing values based on our learned parameters. As expected, the predicted values are nearly the same as the training values for the same housing. Further, the value not in the prediction is in line with the expected value.
+
+
+```python
+print(f"1000 sqft house prediction {w_final*1.0 + b_final:0.1f} Thousand dollars")
+print(f"1200 sqft house prediction {w_final*1.2 + b_final:0.1f} Thousand dollars")
+print(f"2000 sqft house prediction {w_final*2.0 + b_final:0.1f} Thousand dollars")
+```
+
+========
+
+
 ## Plotting
 
 You can show the progress of gradient descent during its execution by plotting the cost over iterations on a contour plot of the cost(w,b).
@@ -265,6 +262,12 @@ You can show the progress of gradient descent during its execution by plotting t
 fig, ax = plt.subplots(1,1, figsize=(12, 6))
 plt_contour_wgrad(x_train, y_train, p_hist, ax)
 ```
+
+
+==========================
+
+
+
 Above, the contour plot shows the cost(w,b) over a range of w and b. Cost levels are represented by the rings. Overlayed, using red arrows, is the path of gradient descent. Here are some things to note:
 
 - The path makes steady (monotonic) progress toward its goal.
@@ -280,7 +283,13 @@ plt_contour_wgrad(x_train, y_train, p_hist, ax, w_range=[180, 220, 0.5], b_range
             contours=[1,5,10,20],resolution=0.5)
 ```
 
+
+================
+
+
 ### Increased Learning Rate
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/ef53f4b5-bd51-4da6-a585-e96d0c64c199" />
 
 In the lecture, there was a discussion related to the proper value of the learning rate,  α in equation(3). The larger α is, the faster gradient descent will converge to a solution. But, if it is too large, gradient descent will diverge. Above you have an example of a solution which converges nicely.
 Let's try increasing the value of α and see what happens:
@@ -297,6 +306,9 @@ w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_
                                                     iterations, compute_cost, compute_gradient) 
 ```
 
+
+
+
 =========
 
 Above, w and b are bouncing back and forth between positive and negative with the absolute value increasing with each iteration. Further, each iteration $\frac{\partial J(w,b)}{\partial w}$ changes sign and cost is increasing rather than decreasing. This is a clear sign that the learning rate is too large and the solution is diverging. Let's visualize this with a plot.
@@ -305,6 +317,11 @@ Above, w and b are bouncing back and forth between positive and negative with th
 plt_divergence(p_hist, J_hist,x_train, y_train)
 plt.show()
 ```
+
+
+===================
+
+
 
 Above, the left graph shows w's progression over the first few steps of gradient descent w oscillates from positive to negative and cost grows rapidly. Gradient Descent is operating on both w and b simultaneously, so one needs the 3-D plot on the right for the complete picture.
 
