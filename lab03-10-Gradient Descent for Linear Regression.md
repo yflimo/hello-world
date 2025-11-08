@@ -125,11 +125,19 @@ def compute_gradient(x, y, w, b):
     return dj_dw, dj_db
 ```
 
-How gradient descent utilizes the partial derivative of the cost with respect to a parameter at a point to update that parameter.Let's use our `compute_gradient` function to find and plot some partial derivatives of our cost function relative to one of the parameters, \( w_0 \).
+How gradient descent utilizes the partial derivative of the cost with respect to a parameter at a point to update that parameter.Let's use our `compute_gradient` function to find and plot some partial derivatives of our cost function relative to one of the parameters  w0.
 
 ```python
 plt_gradients(x_train,y_train, compute_cost, compute_gradient)
 plt.show()
 ```
 
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/c97d019e-65e7-4cff-ae59-30a06ee43904" />
 
+Above, the left plot shows $\frac{\partial J(w,b)}{\partial w}$ or the slope of the cost curve relative to w at three points. On the right side of the plot, the derivative is positive, while on the left it is negative. Due to the 'bowl shape', the derivatives will always lead gradient descent toward the bottom where the gradient is zero.
+
+The left plot has fixed b = 100. Gradient descent will utilize both $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ to update parameters. The 'quiver plot' on the right provides a means of viewing the gradient of both parameters. The arrow sizes reflect the magnitude of the gradient at that point. The direction and slope of the arrow reflects the ratio of $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ at that point. Note that the gradient points *away* from the minimum. Review equation (3) above. The scaled gradient is *subtracted* from the current value of w or b . This moves the parameter in a direction that will reduce cost.
+
+## Gradient Descent
+
+Now that gradients can be computed, gradient descent, described in equation (3) above can be implemented below in `gradient_descent`. The details of the implementation are described in the comments. Below, you will utilize this function to find optimal values of w and b on the training data.
