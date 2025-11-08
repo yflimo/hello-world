@@ -1,10 +1,9 @@
-# Gradient Descent for Linear Regression
 ## Goals
-In this lab, you will:
-- automate the process of optimizing \( w \) and \( b \) using gradient descent.
+In this lab:
+- automate the process of optimizing **w** and **b** using gradient descent.
 
 ## Tools
-In this lab, we will make use of:
+In this lab,will make use of:
 - NumPy, a popular library for scientific computing
 - Matplotlib, a popular library for plotting data
 - plotting routines in the `lab_utils.py` file in the local directory
@@ -13,7 +12,6 @@ In this lab, we will make use of:
 import math, copy
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('./deeplearning.mplstyle')
 from lab_utils_uni import plt_house_x, plt_contour_wgrad, plt_divergence, plt_gradients
 ```
 
@@ -24,9 +22,9 @@ Let’s use the same two data points as before - a house with 1000 square feet s
 |------------------|---------------------------|
 | 1                | 300                       |
 | 2                | 500                       |
+
 ```python
-# Load our data set
-x_train = np.array([1.0, 2.0])  #features
+x_train = np.array([1.0, 2.0])      #features
 y_train = np.array([300.0, 500.0])  #target value
 ```
 
@@ -48,31 +46,28 @@ def compute_cost(x, y, w, b):
 ```
 
 ## Gradient descent summary
-So far in this course, you have developed a linear model that predicts \( f_{w,b}(x^{(i)}) \):
+Developed a linear model that predicts $f_{w,b}(x^{(i)})$：
 
-\[ f_{w,b}(x^{(i)}) = wx^{(i)} + b \tag{1} \]
+$$ f_{w,b}(x^{(i)}) = wx^{(i)} + b $$
 
-In linear regression, you utilize input training data to fit the parameters \( w,b \) by minimizing a measure of the error between our predictions \( f_{w,b}(x^{(i)}) \) and the actual data \( y^{(i)} \). The measure is called the cost, \( J(w, b) \). In training you measure the cost over all of our training samples \( x^{(i)}, y^{(i)} \)
+In linear regression, utilize input training data to fit the parameters w,b by minimizing a measure of the error between our predictions $f_{w,b}(x^{(i)})$ and the actual data y^{(i)}. The measure is called the cost, J(w,b). In training you measure the cost over all of our training samples ( x^{(i)}, y^{(i)} )
 
-\[ J(w,b) = \frac{1}{2m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{2} \]
-```
+$$ J(w,b) = \frac{1}{2m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$
 
 In lecture, gradient descent was described as:
 
-$$\begin{align*}
-&\text{repeat until convergence: } \{ \\
-&\quad w = w - \alpha \frac{\partial J(w,b)}{\partial w} \tag{3} \\
-&\quad b = b - \alpha \frac{\partial J(w,b)}{\partial b} \\
-&\}
-\end{align*}$$
+repeat until convergence:{
 
-where, parameters \( w, b \) are updated simultaneously.
+
+}
+
+where, parameters w, b are updated simultaneously.
 
 The gradient is defined as:
 
-$$\frac{\partial J(w,b)}{\partial w} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)} \tag{4}$$
+$$ \frac{\partial J(w,b)}{\partial w} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})x^{(i)} $$
 
-$$\frac{\partial J(w,b)}{\partial b} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)}) \tag{5}$$
+$$ \frac{\partial J(w,b)}{\partial b} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)}) $$
 
 Here simultaneously means that you calculate the partial derivatives for all the parameters before updating any of the parameters.
 
