@@ -136,7 +136,17 @@ plt.show()
 
 Above, the left plot shows $\frac{\partial J(w,b)}{\partial w}$ or the slope of the cost curve relative to w at three points. On the right side of the plot, the derivative is positive, while on the left it is negative. Due to the 'bowl shape', the derivatives will always lead gradient descent toward the bottom where the gradient is zero.
 
-The left plot has fixed b = 100. Gradient descent will utilize both $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ to update parameters. The 'quiver plot' on the right provides a means of viewing the gradient of both parameters. The arrow sizes reflect the magnitude of the gradient at that point. The direction and slope of the arrow reflects the ratio of $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ at that point. Note that the gradient points *away* from the minimum. Review equation (3) above. The scaled gradient is *subtracted* from the current value of w or b . This moves the parameter in a direction that will reduce cost.
+The left plot has fixed b = 100. Gradient descent will utilize both $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ to update parameters. 
+
+The 'quiver plot' on the right provides a means of viewing the gradient of both parameters. 
+
+The arrow sizes reflect **the magnitude of the gradient at that point.**   箭头的大小反映了该点处梯度的幅值
+
+The direction and slope of the arrow reflects **the ratio of $\frac{\partial J(w,b)}{\partial w}$ and $\frac{\partial J(w,b)}{\partial b}$ at that point.** 箭头的方向和斜率反映了该点处的$\frac{\partial J(w,b)}{\partial w}$ 和 $\frac{\partial J(w,b)}{\partial b}$ 比值。
+
+Note that the gradient points *away* from the minimum. 梯度指向远离最小值的方向
+
+The scaled gradient is *subtracted* from the current value of w or b . This moves the parameter in a direction that will reduce cost.
 
 ## Gradient Descent
 
