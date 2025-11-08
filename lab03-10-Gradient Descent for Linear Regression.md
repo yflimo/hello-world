@@ -1,8 +1,9 @@
-## Goals
+# Gradient Descent for Linear Regression
+### Goals
 In this lab:
 - automate the process of optimizing **w** and **b** using gradient descent.
 
-## Tools
+### Tools
 In this lab,will make use of:
 - NumPy, a popular library for scientific computing
 - Matplotlib, a popular library for plotting data
@@ -28,7 +29,7 @@ x_train = np.array([1.0, 2.0])      #features
 y_train = np.array([300.0, 500.0])  #target value
 ```
 
-## Compute_Cost
+### Compute_Cost
 This was developed in the last lab. We'll need it again here.
 
 ```python
@@ -43,7 +44,7 @@ def compute_cost(x, y, w, b):
     return total_cost
 ```
 
-## Gradient descent summary
+### Gradient descent summary
 Developed a linear model that predicts $f_{w,b}(x^{(i)})$：
 
 $$ f_{w,b}(x^{(i)}) = wx^{(i)} + b $$
@@ -76,7 +77,7 @@ $$ \frac{\partial J(w,b)}{\partial b} = \frac{1}{m} \sum_{i=0}^{m-1} (f_{w,b}(x^
 
 Here simultaneously means that you calculate the partial derivatives for all the parameters before updating any of the parameters.
 
-# Implement Gradient Descent
+### Implement Gradient Descent
 
 You will implement gradient descent algorithm for one feature. You will need three functions.
 
@@ -93,7 +94,7 @@ You will implement gradient descent algorithm for one feature. You will need thr
 
 w.r.t 是 “关于” 的意思，比如 $J(wb)$关于 b 的偏导数
 
-## compute_gradient
+### compute_gradient
 `compute_gradient` implements expressions above and returns $\frac{\partial J(w,b)}{\partial w}$, $\frac{\partial J(w,b)}{\partial b}$. The embedded comments describe the operations.
 
 ```python
@@ -145,7 +146,7 @@ Note that the gradient points *away* from the minimum. 梯度指向远离最小�
 
 The scaled gradient is *subtracted* from the current value of w or b . This moves the parameter in a direction that will reduce cost.
 
-## Gradient Descent
+### Gradient Descent
 
 Now that gradients can be computed, gradient descent, described in equation (3) above can be implemented below in `gradient_descent`. The details of the implementation are described in the comments. Below, you will utilize this function to find optimal values of w and b on the training data.
 
