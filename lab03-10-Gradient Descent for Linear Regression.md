@@ -56,10 +56,13 @@ $$ J(w,b) = \frac{1}{2m} \sum_{i=0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$
 
 In lecture, gradient descent was described as:
 
-repeat until convergence:{
+    repeat until convergence{
 
+    w = w - α $\frac{d}{dw}$ J(w,b)
 
-}
+    b = b - α $\frac{d}{db}$ J(w,b)
+
+    }
 
 where, parameters w, b are updated simultaneously.
 
