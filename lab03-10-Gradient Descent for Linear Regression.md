@@ -96,3 +96,40 @@ w.r.t 是 “关于” 的意思，比如 $J(wb)$关于 b 的偏导数
 ## compute_gradient
 `compute_gradient` implements expressions above and returns $\frac{\partial J(w,b)}{\partial w}$, $\frac{\partial J(w,b)}{\partial b}$. The embedded comments describe the operations.
 
+```python
+def compute_gradient(x, y, w, b):
+    """
+    Computes the gradient for linear regression
+    Args:
+        x (ndarray (m,)): Data, m examples
+        y (ndarray (m,)): target values
+        w,b (scalar)    : model parameters
+    Returns:
+        dj_dw (scalar): The gradient of the cost w.r.t. the parameters w
+        dj_db (scalar): The gradient of the cost w.r.t. the parameter b
+    """
+    # Number of training examples
+    m = x.shape[0]
+    dj_dw = 0
+    dj_db = 0
+
+    for i in range(m):
+        f_wb = w * x[i] + b
+        dj_dw_i = (f_wb - y[i]) * x[i]
+        dj_db_i = f_wb - y[i]
+        dj_db += dj_db_i
+        dj_dw += dj_dw_i
+    dj_dw = dj_dw / m
+    dj_db = dj_db / m
+
+    return dj_dw, dj_db
+```
+
+How gradient descent utilizes the partial derivative of the cost with respect to a parameter at a point to update that parameter.Let's use our `compute_gradient` function to find and plot some partial derivatives of our cost function relative to one of the parameters, \( w_0 \).
+
+```python
+plt_gradients(x_train,y_train, compute_cost, compute_gradient)
+plt.show()
+```
+
+
