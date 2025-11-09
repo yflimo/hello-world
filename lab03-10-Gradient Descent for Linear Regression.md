@@ -204,15 +204,15 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
 
 ```python
 # initialize parameters
-w_init = 0
-b_init = 0
+w_init = 0   #w初始值
+b_init = 0   #b初始值
 # some gradient descent settings
-iterations = 10000
-tmp_alpha = 1.0e-2
+iterations = 10000    #迭代次数
+tmp_alpha = 1.0e-2    #学习率
 # run gradient descent
 w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha, 
                                                     iterations, compute_cost, compute_gradient)
-print(f"(w,b) found by gradient descent: ({w_final:8.4f},{b_final:8.4f})")
+print(f"(w,b) found by gradient descent: ({w_final:8.4f},{b_final:8.4f})")   #8.4f：浮点数，整个数值（含小数点）占 8 个字符宽度，小数点后保留 4 位小数
 ```
 
 <img width="1263" height="386" alt="image" src="https://github.com/user-attachments/assets/16bf1ff3-ab63-4bc5-b1a8-59dc49541849" />
