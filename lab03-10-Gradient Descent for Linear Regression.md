@@ -213,8 +213,7 @@ w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_
 print(f"(w,b) found by gradient descent: ({w_final:8.4f},{b_final:8.4f})")
 ```
 
-===========================
-
+<img width="1263" height="386" alt="image" src="https://github.com/user-attachments/assets/16bf1ff3-ab63-4bc5-b1a8-59dc49541849" />
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bdec6c3d-d96f-448d-a5eb-7d2537f6fbf6" />
 
@@ -227,7 +226,13 @@ Take a moment and note some characteristics of the gradient descent process prin
 - progress slows though the learning rate, alpha, remains fixed
 
 ### Cost versus iterations of gradient descent
-A plot of cost versus iterations is a useful measure of progress in gradient descent. Cost should always decrease in successful runs. The change in cost is so rapid initially, it is useful to plot the initial decent on a different scale than the final descent. In the plots below, note the scale of cost on the axes and the iteration step.
+A plot of **cost** versus **iterations** is a useful measure of progress in gradient descent.
+
+Cost should always **decrease** in successful runs. 
+
+The change in cost is so rapid initially, it is useful to plot the initial decent on a different scale than the final descent. 
+
+In the plots below, note the scale of cost on the axes and the iteration step.
 
 ```python
 # plot cost versus iteration  
@@ -239,11 +244,12 @@ ax1.set_ylabel('Cost')            ;  ax2.set_ylabel('Cost')
 ax1.set_xlabel('iteration step')  ;  ax2.set_xlabel('iteration step') 
 ```
 
-=========================
+<img width="1000" height="498" alt="image" src="https://github.com/user-attachments/assets/111d7df1-0216-4cc9-8598-3732cbb0d4c2" />
+
 
 ### Predictions
 
-Now that you have discovered the optimal values for the parameters w and b, you can now use the model to predict housing values based on our learned parameters. As expected, the predicted values are nearly the same as the training values for the same housing. Further, the value not in the prediction is in line with the expected value.
+Now that have discovered the optimal values for the parameters w and b, you can now use the model to predict housing values based on our learned parameters. As expected, the predicted values are nearly the same as the training values for the same housing. Further, the value not in the prediction is in line with the expected value.
 
 
 ```python
@@ -252,8 +258,7 @@ print(f"1200 sqft house prediction {w_final*1.2 + b_final:0.1f} Thousand dollars
 print(f"2000 sqft house prediction {w_final*2.0 + b_final:0.1f} Thousand dollars")
 ```
 
-========
-
+<img width="1000" height="150" alt="image" src="https://github.com/user-attachments/assets/fa65998e-6b59-45cd-b3bd-34b82aae3b36" />
 
 ## Plotting
 
@@ -263,17 +268,17 @@ You can show the progress of gradient descent during its execution by plotting t
 fig, ax = plt.subplots(1,1, figsize=(12, 6))
 plt_contour_wgrad(x_train, y_train, p_hist, ax)
 ```
+<img width="1000" height="500 alt="image" src="https://github.com/user-attachments/assets/f71db3f1-b2db-4ad9-85c0-77ea982a17cb" />
 
+Above, the contour plot shows the cost(w,b) over a range of w and b. 
 
-==========================
+Cost levels are represented by the rings. Overlayed, using red arrows, is the path of gradient descent. 
 
+Here are some things to note:
 
-
-Above, the contour plot shows the cost(w,b) over a range of w and b. Cost levels are represented by the rings. Overlayed, using red arrows, is the path of gradient descent. Here are some things to note:
-
-- The path makes steady (monotonic) progress toward its goal.
+- The path makes steady (monotonic) progress toward its goal.该路径向其目标稳步（单调）推进。
   
-- initial steps are much larger than the steps near the goal.
+- initial steps are much larger than the steps near the goal.最初的步长比目标附近的步长大得多。
   
 **Zooming in**, we can see that final steps of gradient descent. Note the distance between steps shrinks as the gradient approaches zero.
 
@@ -284,16 +289,17 @@ plt_contour_wgrad(x_train, y_train, p_hist, ax, w_range=[180, 220, 0.5], b_range
             contours=[1,5,10,20],resolution=0.5)
 ```
 
-
-================
-
+<img width="1000" height="350" alt="image" src="https://github.com/user-attachments/assets/0f185d1f-50ba-44e0-bc38-cfc89ab6b37d" />
 
 ### Increased Learning Rate
 
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/ef53f4b5-bd51-4da6-a585-e96d0c64c199" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ef53f4b5-bd51-4da6-a585-e96d0c64c199" />
 
-In the lecture, there was a discussion related to the proper value of the learning rate,  α in equation(3). The larger α is, the faster gradient descent will converge to a solution. But, if it is too large, gradient descent will diverge. Above you have an example of a solution which converges nicely.
-Let's try increasing the value of α and see what happens:
+In the lecture, there was a discussion related to the proper value of the learning rate,  α in equation(3). 
+
+The larger α is, the faster gradient descent will converge to a solution. But, if it is too large, gradient descent will diverge. 
+
+Above you have an example of a solution which converges nicely.Let's try increasing the value of α and see what happens:
 
 ```python
 # initialize parameters
@@ -306,36 +312,26 @@ tmp_alpha = 8.0e-1
 w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha, 
                                                     iterations, compute_cost, compute_gradient) 
 ```
+<img width="1248" height="336" alt="image" src="https://github.com/user-attachments/assets/932cdb15-61e9-4b0d-bb76-abbb66b733d8" />
 
+Above, w and b are bouncing back and forth between positive and negative with the absolute value increasing with each iteration. 
 
+Further, each iteration $\frac{\partial J(w,b)}{\partial w}$ changes sign and cost is increasing rather than decreasing. 
 
+This is a clear sign that the learning rate is **too large** and the solution is **diverging**. 
 
-=========
-
-Above, w and b are bouncing back and forth between positive and negative with the absolute value increasing with each iteration. Further, each iteration $\frac{\partial J(w,b)}{\partial w}$ changes sign and cost is increasing rather than decreasing. This is a clear sign that the learning rate is too large and the solution is diverging. Let's visualize this with a plot.
+Let's visualize this with a plot.
 
 ```python
 plt_divergence(p_hist, J_hist,x_train, y_train)
 plt.show()
 ```
-
-
-===================
-
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/f70fa7f2-314d-4f81-b6c2-e55d331e1503" />
 
 
 Above, the left graph shows w's progression over the first few steps of gradient descent w oscillates from positive to negative and cost grows rapidly. Gradient Descent is operating on both w and b simultaneously, so one needs the 3-D plot on the right for the complete picture.
 
 
-## Congratulations
-
-In this lab you:
-- delved into the details of gradient descent for a single variable.
-- developed a routine to compute the gradient
-- visualized what the gradient is
-- completed a gradient descent routine
-- utilized gradient descent to find parameters
-- examined the impact of sizing the learning rate
 
 
 
@@ -346,13 +342,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from lab_utils_uni import plt_house_x, plt_contour_wgrad, plt_divergence, plt_gradients
 
-
-x_train = np.array([1.0, 2.0])   
-y_train = np.array([300.0, 500.0])   
-
+x_train = np.array([1.0, 2.0])
+y_train = np.array([300.0, 500.0])
 
 def compute_cost(x, y, w, b):
-    m = x.shape[0] 
+    m = x.shape[0]
     cost = 0
     for i in range(m):
         f_wb = w * x[i] + b
@@ -360,35 +354,55 @@ def compute_cost(x, y, w, b):
     total_cost = 1 / (2 * m) * cost
     return total_cost
 
-def compute_gradient(x, y, w, b): 
-    m = x.shape[0]    
+def compute_gradient(x, y, w, b):
+    m = x.shape[0]
     dj_dw = 0
     dj_db = 0
-    for i in range(m):  
-        f_wb = w * x[i] + b 
-        dj_dw_i = (f_wb - y[i]) * x[i] 
-        dj_db_i = f_wb - y[i] 
+    for i in range(m):
+        f_wb = w * x[i] + b
+        dj_dw_i = (f_wb - y[i]) * x[i]
+        dj_db_i = f_wb - y[i]
         dj_db += dj_db_i
-        dj_dw += dj_dw_i 
-    dj_dw = dj_dw / m 
-    dj_db = dj_db / m        
+        dj_dw += dj_dw_i
+    dj_dw = dj_dw / m
+    dj_db = dj_db / m
     return dj_dw, dj_db
 
 plt_gradients(x_train,y_train, compute_cost, compute_gradient)
 plt.show()
 
-def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient_function): 
-    w = copy.deepcopy(w_in) # avoid modifying global w_in
+def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient_function):
+    """
+    Performs gradient descent to fit w,b. Updates w,b by taking
+    num_iters gradient steps with learning rate alpha
+
+    Args:
+      x (ndarray (m,))  : Data, m examples
+      y (ndarray (m,))  : target values
+      w_in,b_in (scalar): initial values of model parameters  模型参数的初始值
+      alpha (float):     Learning rate
+      num_iters (int):   number of iterations to run gradient descent  运行梯度下降的迭代次数
+      cost_function:     function to call to produce cost
+      gradient_function: function to call to produce gradient
+
+    Returns:
+      w (scalar): Updated value of parameter after running gradient descent   运行梯度下降后参数的更新值
+      b (scalar): Updated value of parameter after running gradient descent
+      J_history (List): History of cost values    成本值的历史记录
+      p_history (list): History of parameters [w,b]    参数的历史记录[w，b]
+    """
+
+    w = copy.deepcopy(w_in)
     J_history = []
     p_history = []
     b = b_in
     w = w_in
-    
+
     for i in range(num_iters):
-        dj_dw, dj_db = gradient_function(x, y, w , b)        
-        b = b - alpha * dj_db                            
-        w = w - alpha * dj_dw                            
-        if i<100000:     
+        dj_dw, dj_db = gradient_function(x, y, w , b)
+        b = b - alpha * dj_db
+        w = w - alpha * dj_dw
+        if i<100000:
             J_history.append( cost_function(x, y, w , b))
             p_history.append([w,b])
         if i% math.ceil(num_iters/10) == 0:
@@ -397,28 +411,32 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
                   f"w: {w: 0.3e}, b:{b: 0.5e}")
     return w, b, J_history, p_history
 
+# initialize parameters
 w_init = 0
 b_init = 0
+# some gradient descent settings
 iterations = 10000
 tmp_alpha = 1.0e-2
-w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha, 
+# run gradient descent
+w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha,
                                                     iterations, compute_cost, compute_gradient)
 print(f"(w,b) found by gradient descent: ({w_final:8.4f},{b_final:8.4f})")
 
 
+# plot cost versus iteration
+#将训练过程中的损失值（Cost）与迭代次数（Iteration）的关系可视化，并分 “前期迭代” 和 “后期迭代” 两个子图
 fig, (ax1, ax2) = plt.subplots(1, 2, constrained_layout=True, figsize=(12,4))
 ax1.plot(J_hist[:100])
 ax2.plot(1000 + np.arange(len(J_hist[1000:])), J_hist[1000:])
 ax1.set_title("Cost vs. iteration(start)");  ax2.set_title("Cost vs. iteration (end)")
-ax1.set_ylabel('Cost')            ;  ax2.set_ylabel('Cost') 
-ax1.set_xlabel('iteration step')  ;  ax2.set_xlabel('iteration step') 
+ax1.set_ylabel('Cost')            ;  ax2.set_ylabel('Cost')
+ax1.set_xlabel('iteration step')  ;  ax2.set_xlabel('iteration step')
 plt.show()
 
-
+#Predictions
 print(f"1000 sqft house prediction {w_final*1.0 + b_final:0.1f} Thousand dollars")
 print(f"1200 sqft house prediction {w_final*1.2 + b_final:0.1f} Thousand dollars")
 print(f"2000 sqft house prediction {w_final*2.0 + b_final:0.1f} Thousand dollars")
-
 
 fig, ax = plt.subplots(1,1, figsize=(12, 6))
 plt_contour_wgrad(x_train, y_train, p_hist, ax)
@@ -428,15 +446,15 @@ fig, ax = plt.subplots(1,1, figsize=(12, 4))
 plt_contour_wgrad(x_train, y_train, p_hist, ax, w_range=[180, 220, 0.5], b_range=[80, 120, 0.5],
             contours=[1,5,10,20],resolution=0.5)
 
-
+# initialize parameters
 w_init = 0
 b_init = 0
 iterations = 10
 tmp_alpha = 8.0e-1
-w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha, 
+w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha,
                                                     iterations, compute_cost, compute_gradient)
-
 
 plt_divergence(p_hist, J_hist,x_train, y_train)
 plt.show()
+   
 ```
