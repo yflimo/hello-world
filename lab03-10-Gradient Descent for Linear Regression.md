@@ -268,7 +268,9 @@ You can show the progress of gradient descent during its execution by plotting t
 fig, ax = plt.subplots(1,1, figsize=(12, 6))
 plt_contour_wgrad(x_train, y_train, p_hist, ax)
 ```
-<img width="1000" height="500 alt="image" src="https://github.com/user-attachments/assets/f71db3f1-b2db-4ad9-85c0-77ea982a17cb" />
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/dc60a23f-d5a2-4dfb-9d29-c26bee18787b" />
+
 
 Above, the contour plot shows the cost(w,b) over a range of w and b. 
 
