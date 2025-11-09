@@ -159,15 +159,15 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
     Args:
       x (ndarray (m,))  : Data, m examples 
       y (ndarray (m,))  : target values
-      w_in,b_in (scalar): initial values of model parameters  
+      w_in,b_in (scalar): initial values of model parameters              模型参数的初始值
       alpha (float):     Learning rate
-      num_iters (int):   number of iterations to run gradient descent
+      num_iters (int):   number of iterations to run gradient descent    运行梯度下降的迭代次数
       cost_function:     function to call to produce cost
       gradient_function: function to call to produce gradient
       
     Returns:
-      w (scalar): Updated value of parameter after running gradient descent
-      b (scalar): Updated value of parameter after running gradient descent
+      w (scalar): Updated value of parameter after running gradient descent    运行梯度下降后更新参数值
+      b (scalar): Updated value of parameter after running gradient descent    
       J_history (List): History of cost values
       p_history (list): History of parameters [w,b] 
       """
@@ -187,17 +187,19 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
         b = b - alpha * dj_db                            
         w = w - alpha * dj_dw                            
 
-        # Save cost J at each iteration
-        if i<100000:      # prevent resource exhaustion 
+        # Save cost J at each iteration  每次迭代J
+        if i<100000:      # prevent resource exhaustion  防止资源耗尽
             J_history.append( cost_function(x, y, w , b))
             p_history.append([w,b])
-        # Print cost every at intervals 10 times or as many iterations if < 10
+        # Print cost every at intervals 10 times or as many iterations if < 10  每隔10次打印成本，如果< 10次，则按迭代次数计算
+        # num_iters：迭代次数-->num_iters/10：求商-->math.ceil(num_iters/10)求商结果后向上取整，即打印间隔
+        #假设打印间隔为a,i=0.a,2a,...9a，如果迭代次数 < 10，全打印无遗漏，此时math.ceil(num_iters/10)<=1
         if i% math.ceil(num_iters/10) == 0:
             print(f"Iteration {i:4}: Cost {J_history[-1]:0.2e} ",
                   f"dj_dw: {dj_dw: 0.3e}, dj_db: {dj_db: 0.3e}  ",
                   f"w: {w: 0.3e}, b:{b: 0.5e}")
  
-    return w, b, J_history, p_history #return w and J,w history for graphing
+    return w, b, J_history, p_history      #return w and J,w history for graphing
 ```
 
 ```python
@@ -455,8 +457,5 @@ iterations = 10
 tmp_alpha = 8.0e-1
 w_final, b_final, J_hist, p_hist = gradient_descent(x_train ,y_train, w_init, b_init, tmp_alpha,
                                                     iterations, compute_cost, compute_gradient)
-
-plt_divergence(p_hist, J_hist,x_train, y_train)
-plt.show()
-   
 ```
+
