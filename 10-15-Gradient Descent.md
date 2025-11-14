@@ -107,5 +107,3 @@ $b = b - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \ri
 <img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/40b7d6ac-70d8-4f96-82bb-6ecd008d75f6" />
 
 <img width="350" height="400" alt="image" src="https://github.com/user-attachments/assets/627870d3-4139-40fe-be81-4dacff7a788c" />
-
-
