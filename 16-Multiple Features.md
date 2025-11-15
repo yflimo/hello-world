@@ -41,7 +41,7 @@ x=np.array([10,20,30])
 
 code count from **0**
 
-Without vectorization
+#### Without vectorization🙁
 
 $f_{\vec{w},\, b}(\vec{x})= w_1 x_1 + w_2 x_2 + w_3 x_3 + b$
 
@@ -50,6 +50,8 @@ f=w[0]*x[0]+
   w[1]*x[1]+
   w[2]*x[2]+b
 ```
+
+#### Without vectorization😐
 
 $f_{\vec{w}, b}(\vec{x}) = \sum_{\substack{j=1 \\ ~}}^{n} w_j x_j + b$
 
@@ -60,8 +62,13 @@ for j in range(0,n):
 f=f+b
 ```
 
+#### Vectorization😀 
 
+$f_{\vec{w},\, b}(\vec{x}) = \vec{w} \cdot \vec{x} + b$
 
+```python
+f=np.dot(w,x)+b
+```
 
 
 
