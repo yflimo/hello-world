@@ -34,40 +34,72 @@ In notation, elements of a vector, when referenced individually will indicate th
 
 for example, the $0^{th}$ element, of the vector x is $x_0$. Note, the x is not bold in this case.
 ## 4.2 NumPy Arrays
-NumPy's basic data structure is an indexable, n-dimensional array containing elements of the same type (dtype). Right away, you may notice we have overloaded the term 'dimension'. Above, it was the number of elements in the vector, here, dimension refers to the number of indexes of an array. A one-dimensional or 1-D array has one index. In Course 1, we will represent vectors as NumPy 1-D arrays.
+NumPy's basic data structure is an indexable, n-dimensional array containing elements of the same type (dtype). 
+
+可索引的n维数组 包含相同类型的元素
+
+Right away, you may notice we have overloaded the term 'dimension'. Above, it was the number of elements in the vector, here, dimension refers to the number of indexes of an array. A one-dimensional or 1-D array has one index. In Course 1, we will represent vectors as NumPy 1-D arrays.
 
 - 1-D array, shape (n,): n elements indexed [0] through [n-1]
 
 ## 4.3NumPy Creation
-Data creation routines in NumPy will generally have a first parameter which is the shape of the object. This can either be a single value for a 1-D result or a tuple (n,m,...) specifying the shape of the result. Below are examples of creating vectors using these routines.
+Data creation routines in NumPy will generally have a first parameter which is the shape of the object. 
+
+This can either be a single value for a 1-D result or a tuple (n,m,...) specifying the shape of the result. 
+
+Below are examples of creating vectors using these routines.
 ```python
-# NumPy routines which allocate memory and fill arrays with value
+# 默认float
 a = np.zeros(4);                print(f"np.zeros(4) :   a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 a = np.zeros((4,));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.zeros((4,2));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 a = np.random.random_sample(4); print(f"np.random.random_sample(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
-==========
+<img width="800" height="150" alt="image" src="https://github.com/user-attachments/assets/b193d455-2202-4e3a-8e68-0067131590f4" />
 
 Some data creation routines do not take a shape tuple:
 ```python
-# NumPy routines which allocate memory and fill arrays with value but do not accept shape as input argument
+np.arange([start,] stop[, step])
+```
+- **Parameter**：
+  - `start`：Initial value (default: 0
+  - `stop`：The ending value (excluding 'stop'
+  - `step`：Step size (default: 1
+- **return**：The array from 'start' to < stop 'increments in step size' step '.   [start,stop)
+
+```python
 a = np.arange(4.);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.arange(4);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.arange(4,6,0.5);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 a = np.random.rand(4);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.random.rand(2,3);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
-=========
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/1f9d25c6-5c6a-413b-bbe1-c0793627fa03" />
+
 
 values can be specified manually as well.
 ```python
-# NumPy routines which allocate memory and fill with user specified values
-a = np.array([5,4,3,2]);  print(f"np.array([5,4,3,2]):  a = {a},     a shape = {a.shape}, a data type = {a.dtype}")
-a = np.array([5.,4,3,2]); print(f"np.array([5.,4,3,2]): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+np.array(object, dtype=None, copy=True, order='K', ndmin=0)
 ```
 
-=============
+- **Parameter**：
+  - `object`：要转换为数组的列表、元组等
+  - `dtype`：指定数组的数据类型（如 int, float 等）
+  - `ndmin`：最小维度（比如 ndmin=2 会把一维数组变成二维）
+    
+```python
+# NumPy routines which allocate memory and fill with user specified values
+a = np.array([5,4,3,2]);  print(f"np.array([5,4,3,2]):  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.array([5.,4,3,2]); print(f"np.array([5.,4,3,2]): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.array([[5,4,3,2],[5.,4,3,2]]);  print(f"np.array([[5,4,3,2],[5.,4,3,2]]):  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+```
 
-These have all created a one-dimensional vector a with four elements. a.shape returns the dimensions. Here we see a.shape = (4,) indicating a 1-d array with 4 elements.
+<img width="800" height="150" alt="image" src="https://github.com/user-attachments/assets/3b95887b-2559-44a0-876a-f28845d2032c" />
+
+np.array([5,4,3,2]) and np.array([5.,4,3,2]) have all created a one-dimensional vector a with four elements. a.shape returns the dimensions. Here we see a.shape = (4,) indicating a 1-d array with 4 elements.
+
 ## 4.4 Operations on Vectors
 Let's explore some operations using vectors.
 ### 4.4.1 Indexing
