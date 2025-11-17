@@ -9,12 +9,30 @@ import time
 - NumPy Documentation including a basic introduction:NumPy.org
 - A challenging feature topic:NumPy Broadcasting
 # 3 Python and NumPy
-Python is the programming language we will be using in this course. It has a set of numeric data types and arithmetic operations. NumPy is a library that extends the base capabilities of python to add a richer data set including more numeric types, vectors, matrices, and many matrix functions. NumPy and python work together fairly seamlessly. Python arithmetic operators work on NumPy data types and many NumPy functions will accept python data types.
+Python is the programming language we will be using in this course. It has a set of numeric data types and arithmetic operations. 
+
+NumPy is a library that extends the base capabilities of python to add a richer data set including more numeric types, vectors, matrices, and many matrix functions.
+
+NumPy and python work together fairly seamlessly. Python arithmetic operators work on NumPy data types and many NumPy functions will accept python data types.
 # 4 Vectors
 ## 4.1 Abstract
 <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/9b650d75-9a8e-477d-a287-01b745657307" />
 
-Vectors, as you will use them in this course, are ordered arrays of numbers. In notation, vectors are denoted with lower case bold letters such as x. The elements of a vector are all the same type. A vector does not, for example, contain both characters and numbers. The number of elements in the array is often referred to as the dimension though mathematicians may prefer rank. The vector shown has a dimension of n. The elements of a vector can be referenced with an index. In math settings, indexes typically run from 1 to n. In computer science and these labs, indexing will typically run from 0 to n-1. In notation, elements of a vector, when referenced individually will indicate the index in a subscript, for example, the $0^{th}$ element, of the vector x is $x_0$. Note, the x is not bold in this case.
+Vectors are ordered arrays of numbers. In notation, vectors are denoted with lower case bold letters such as **x**. 
+
+The elements of a vector are all the same type. A vector does not, for example, contain both characters and numbers. 
+
+**The number of elements in the array** is often referred to as the **dimension** though mathematicians may prefer **rank**. 
+
+The vector shown has a dimension of n. The elements of a vector can be referenced with an index. 
+
+- In math settings, indexes typically run **from 1 to n**. 
+
+- In computer science and these labs, indexing will typically run **from 0 to n-1**.
+
+In notation, elements of a vector, when referenced individually will indicate the index in a subscript, 
+
+for example, the $0^{th}$ element, of the vector x is $x_0$. Note, the x is not bold in this case.
 ## 4.2 NumPy Arrays
 NumPy's basic data structure is an indexable, n-dimensional array containing elements of the same type (dtype). Right away, you may notice we have overloaded the term 'dimension'. Above, it was the number of elements in the vector, here, dimension refers to the number of indexes of an array. A one-dimensional or 1-D array has one index. In Course 1, we will represent vectors as NumPy 1-D arrays.
 
