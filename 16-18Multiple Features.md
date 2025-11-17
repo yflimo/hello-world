@@ -73,11 +73,11 @@ f=np.dot(w,x)+b
 makes code shorter;easier to write;easier to read;makes it run much faster
 
 
-get all values of thee vectors w and x,
+- 0)get all values of thee vectors w and x,
 
-multiplies each pair of w and x with each other all at the same time in parallel
+- 1)multiplies each pair of w and x with each other all at the same time in parallel
 
-the computer takes these numbers and use specialized hardware to add together very efficiently
+- 2)the computer takes these numbers and use specialized hardware to add together very efficiently
 
 
 
