@@ -50,9 +50,13 @@ This can either be a single value for a 1-D result or a tuple (n,m,...) specifyi
 Below are examples of creating vectors using these routines.
 ```python
 # 默认float
+#括号内用int整型表示，生成float（默认 float64） 4个0
 a = np.zeros(4);                print(f"np.zeros(4) :   a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#括号内用tuple元组表示，生成float（默认 float64） 一维4个0.
 a = np.zeros((4,));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#生成float（默认 float64） 二维  4行*2列 4*2=8个0.
 a = np.zeros((4,2));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#0-1随机数  float
 a = np.random.random_sample(4); print(f"np.random.random_sample(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
@@ -69,10 +73,16 @@ np.arange([start,] stop[, step])
 - **return**：The array from 'start' to < stop 'increments in step size' step '.   [start,stop)
 
 ```python
+#float 连续递增数字
 a = np.arange(4.);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#int 连续递增数字
 a = np.arange(4);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+# np.arange([start,] stop[, step])  start：起始值（默认 0） stop：结束值（不包含 stop） step：步长（默认 1） 返回：从 start 到 < stop 的数组，按照步长 step 递增。
+#float [4,6)每次增加0.5的所有数字
 a = np.arange(4,6,0.5);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#一维 生成4个随机0-1的数字 float
 a = np.random.rand(4);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+#二维 float  2行*3列 2*3个随机0-1的数字
 a = np.random.rand(2,3);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
@@ -154,29 +164,30 @@ except Exception as e:
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/fa53d64c-1ef0-4071-8630-95ef29d31123" />
 
 ### 4.4.2 Slicing
-Slicing creates an array of indices using a set of three values (start:stop:step). A subset of values is also valid. Its use is best explained by example:
+Slicing creates an array of indices using a set of three values **(start:stop:step)**. A subset of values is also valid. 
+
+  - `start`：Initial value (default: 0
+  - `stop`：The ending value (excluding 'stop'
+  - `step`：Step size (default: 1
+    
 ```python
-#vector slicing operations
+#vector slicing operations  向量切片操作
 a = np.arange(10)
 print(f"a         = {a}")
-
-#access 5 consecutive elements (start:stop:step)
+#access 5 consecutive elements (start:stop:step)  访问5个连续的元素（开始：停止：步长）
 c = a[2:7:1];     print("a[2:7:1] = ", c)
-
-# access 3 elements separated by two 
-c = a[2:7:2];     print("a[2:7:2] = ", c)
-
-# access all elements index 3 and above
+# access 3 elements separated by two  访问3个元素，由两个元素分开 从2开始(包括2)，到6结束(不包括6)，步长为2
+c = a[2:6:2];     print("a[2:6:2] = ", c)
+# access all elements index 3 and above 访问所有索引为3及以上的元素
 c = a[3:];        print("a[3:]    = ", c)
-
-# access all elements below index 3
+# access all elements below index 3  访问索引3以下的所有元素
 c = a[:3];        print("a[:3]    = ", c)
-
-# access all elements
+# access all elements  访问所有元素
 c = a[:];         print("a[:]     = ", c)
 ```
 
-===============
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5cf81dec-f7cf-4268-86db-6fb084e20ed7" />
+
 
 ### 4.4.3 Single vector operations
 There are a number of useful operations that involve operations on a single vector.
