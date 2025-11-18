@@ -151,7 +151,7 @@ except Exception as e:
     print(e)
 ```
 
-============
+<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/fa53d64c-1ef0-4071-8630-95ef29d31123" />
 
 ### 4.4.2 Slicing
 Slicing creates an array of indices using a set of three values (start:stop:step). A subset of values is also valid. Its use is best explained by example:
