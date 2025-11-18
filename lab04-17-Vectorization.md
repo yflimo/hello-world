@@ -194,22 +194,21 @@ There are a number of useful operations that involve operations on a single vect
 ```python
 a = np.array([1,2,3,4])
 print(f"a             : {a}")
-# negate elements of a
+# negate elements of a  a中每个元素的负数
 b = -a 
 print(f"b = -a        : {b}")
-
-# sum all elements of a, returns a scalar
-b = np.sum(a) 
+# sum all elements of a, returns a scalar 将a的所有元素相加，返回一个标量
+b = np.sum(a)  
 print(f"b = np.sum(a) : {b}")
-
+#计算a的平均数
 b = np.mean(a)
 print(f"b = np.mean(a): {b}")
-
+# a中每个元素的平方
 b = a**2
 print(f"b = a**2      : {b}")
 ```
 
-================
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/6d1e713b-fc6d-4c06-8e4a-90cf163c8964" />
 
 ### 4.4.4 Vector Vector element-wise operations
 Most of the NumPy arithmetic, logical and comparison operations apply to vectors as well. These operators work on an element-by-element basis. For example
