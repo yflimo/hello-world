@@ -241,19 +241,21 @@ Vectors can be 'scaled' by scalar values. A scalar value is just a number. The s
 ```python
 a = np.array([1, 2, 3, 4])
 
-# multiply a by a scalar
+# multiply a by a scalar  乘以一个标量
 b = 5 * a 
 print(f"b = 5 * a : {b}")
 ```
 
-=============
+<img width="300" height="30" alt="image" src="https://github.com/user-attachments/assets/0694bfce-d3fd-4cd2-8eb1-3e7cb8a312dd" />
 
 ### 4.4.6 Vector Vector dot product
 The dot product is a mainstay of Linear Algebra and NumPy. This is an operation used extensively in this course and should be well understood. The dot product is shown below.
 
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/ff22404b-27f1-43f9-8631-c4ad9528cae7" />
 
-The dot product multiplies the values in two vectors element-wise and then sums the result. Vector dot product requires the dimensions of the two vectors to be the same.
+The dot product **multiplies the values in two vectors element-wise** and then **sums the result**. 
+
+Vector dot product requires **the dimensions of the two vectors to be the same**.
 
 Let's implement our own version of the dot product below:
 
