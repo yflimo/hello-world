@@ -16,7 +16,7 @@ NumPy is a library that extends the base capabilities of python to add a richer 
 NumPy and python work together fairly seamlessly. Python arithmetic operators work on NumPy data types and many NumPy functions will accept python data types.
 # 4 Vectors
 ## 4.1 Abstract
-<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/9b650d75-9a8e-477d-a287-01b745657307" />
+<img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/9b650d75-9a8e-477d-a287-01b745657307" />
 
 Vectors are ordered arrays of numbers. In notation, vectors are denoted with lower case bold letters such as **x**. 
 
@@ -81,24 +81,46 @@ a = np.random.rand(2,3);          print(f"np.random.rand(4): a = {a}, a shape = 
 
 values can be specified manually as well.
 ```python
-np.array(object, dtype=None, copy=True, order='K', ndmin=0)
+np.array(object, dtype=None, ndmin=0)
 ```
 
 - **Parameter**：
   - `object`：要转换为数组的列表、元组等
   - `dtype`：指定数组的数据类型（如 int, float 等）
   - `ndmin`：最小维度（比如 ndmin=2 会把一维数组变成二维）
-    
+
+shape returns a tuple (dim0, dim1, dim2, …)
+
+Each dimension represents the number of elements along that axis.
+
+- Axis 0 → length of the outermost array
+
+- Axis 1 → length of the elements (1D arrays) in Axis 0
+
+- Axis 2 → length of the elements (1D arrays) in Axis 1
+
+- And so on...
+
+
 ```python
 # NumPy routines which allocate memory and fill with user specified values
-a = np.array([5,4,3,2]);  print(f"np.array([5,4,3,2]):  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.array([5,4,3,2]);  print(f"np.array([5,4,3,2]):  a = {a},     a shape = {a.shape}, a data type = {a.dtype}")
 a = np.array([5.,4,3,2]); print(f"np.array([5.,4,3,2]): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 a = np.array([[5,4,3,2],[5.,4,3,2]]);  print(f"np.array([[5,4,3,2],[5.,4,3,2]]):  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.array([[[5, 4, 3, 2],[5., 4, 3, 2]],[[1, 2, 3, 4],[1., 2, 3, 4]]]);
+print(f"np.array([[[5, 4, 3, 2],[5., 4, 3, 2]],[[1, 2, 3, 4],[1., 2, 3, 4]]]: a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+
 ```
 
-<img width="800" height="150" alt="image" src="https://github.com/user-attachments/assets/3b95887b-2559-44a0-876a-f28845d2032c" />
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/57c1bb54-3d3d-4b24-b9d6-5b0b7c0830e7" />
 
 np.array([5,4,3,2]) and np.array([5.,4,3,2]) have all created a one-dimensional vector a with four elements. a.shape returns the dimensions. Here we see a.shape = (4,) indicating a 1-d array with 4 elements.
+
+| 特性   | `np.array` | `np.arange`       | `np.zeros` |
+| ---- | ---------- | ----------------- | ---------- |
+| 数组内容 | 由已有数据决定    | 自动生成递增数列          | 全部为 0      |
+| 参数   | 列表、元组等     | start, stop, step | shape      |
+| 维度   | 可由数据结构决定   | 一般一维（可 reshape）   | 可指定 shape  |
 
 ## 4.4 Operations on Vectors
 Let's explore some operations using vectors.
