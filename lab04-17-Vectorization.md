@@ -125,7 +125,7 @@ np.array([5,4,3,2]) and np.array([5.,4,3,2]) have all created a one-dimensional 
 ## 4.4 Operations on Vectors
 Let's explore some operations using vectors.
 ### 4.4.1 Indexing
-Elements of vectors can be accessed via indexing and slicing. NumPy provides a very complete set of indexing and slicing capabilities. We will explore only the basics needed for the course here. Reference Slicing and Indexing for more details.
+Elements of vectors can be accessed via indexing and slicing. NumPy provides a very complete set of indexing and slicing capabilities.
 
 **Indexing** means referring to an element of an array by its position within the array.
 
@@ -133,17 +133,17 @@ Elements of vectors can be accessed via indexing and slicing. NumPy provides a v
 
 NumPy starts indexing at zero so the 3rd element of an vector a is a[2].
 ```python
-#vector indexing operations on 1-D vectors
+#vector indexing operations on 1-D vectors 一维向量索引操作
 a = np.arange(10)
 print(a)
 
-#access an element
+#access an element 访问单个元素
 print(f"a[2].shape: {a[2].shape} a[2]  = {a[2]}, Accessing an element returns a scalar")
 
-# access the last element, negative indexes count from the end
+# access the last element, negative indexes count from the end  访问最后一个元素，负数索引从末尾开始计算
 print(f"a[-1] = {a[-1]}")
 
-#indexs must be within the range of the vector or they will produce and error
+#indexs must be within the range of the vector or they will produce and error 索引必须在向量的范围内，否则会产生错误
 try:
     c = a[10]
 except Exception as e:
