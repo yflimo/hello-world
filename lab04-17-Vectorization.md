@@ -220,10 +220,10 @@ b = np.array([-1,-2, 3, 4])
 print(f"Binary operators work element wise: {a + b}")
 ```
 
-============
+<img width="400" height="40" alt="image" src="https://github.com/user-attachments/assets/2d0ea7ee-23fe-4778-9f2e-7b50954d5816" />
 
 ```python
-#try a mismatched vector operation
+#try a mismatched vector operation 尝试维度不匹配的向量操作
 c = np.array([1, 2])
 try:
     d = a + c
@@ -232,7 +232,7 @@ except Exception as e:
     print(e)
 ```
 
-===========
+<img width="700" height="70" alt="image" src="https://github.com/user-attachments/assets/c646b54b-5e6e-4e85-b42a-6b4ed85d268f" />
 
 ### 4.4.5 Scalar Vector operations
 
