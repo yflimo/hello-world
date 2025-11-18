@@ -288,11 +288,11 @@ b = np.array([-1, 4, 3, 2])
 print(f"my_dot(a, b) = {my_dot(a, b)}")
 ```
 
-====
+<img width="200" height="30" alt="image" src="https://github.com/user-attachments/assets/0628f942-b08d-48c2-b194-0a609d5bb761" />
 
 Note, the dot product is expected to return a scalar value.
 
-Let's try the same operations using np.dot.
+Let's try the same operations using **np.dot**.
 ```python
 # test 1-D
 a = np.array([1, 2, 3, 4])
@@ -303,7 +303,9 @@ c = np.dot(b, a)
 print(f"NumPy 1-D np.dot(b, a) = {c}, np.dot(a, b).shape = {c.shape} ")
 ```
 
-==============
+<img width="669" height="78" alt="image" src="https://github.com/user-attachments/assets/ff060d7f-3f75-407d-8ce1-a8edc603d771" />
+
+一维数组做dot得到的结果是纯标量（scalar）,不是数组，因此没有维度。一个真正的 0 维标量
 
 Above, you will note that the results for 1-D matched our implementation.
 ### 4.4.7 The Need for Speed: vector vs for loop
@@ -331,7 +333,8 @@ print(f"loop version duration: {1000*(toc-tic):.4f} ms ")
 del(a);del(b)  #remove these big arrays from memory
 ```
 
-============
+<img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/afdead82-8e2e-4568-97a9-a0d88481f825" />
+
 
 So, vectorization provides a large speed up in this example. This is because NumPy makes better use of available data parallelism in the underlying hardware. GPU's and modern CPU's implement Single Instruction, Multiple Data (SIMD) pipelines allowing multiple operations to be issued in parallel. This is critical in Machine Learning where the data sets are often very large.
 ### 4.4.8 Vector Vector operations in Course 1
