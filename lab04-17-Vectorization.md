@@ -481,6 +481,30 @@ print("a[1]   = ", a[1],   ",  a[1].shape   =", a[1].shape, "a 1-D array")
 
 <img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/31406ee5-e8b6-468c-9409-9c6d16fdcb72" />
 
+**a[0, 2:7:1]**
+
+0 → 选取第 0 行
+
+2:7:1 → 从第 2 列到第 6 列（不包含 7），步长 1
 
 
+```markdown
+第 0 行: [0 1 2 3 4 5 6 7 8 9]
+             ↑ ↑ ↑ ↑ ↑
+             2 3 4 5 6
+```
 
+第一维用整数索引 → 取一行
+
+第二维用切片 → 得到 1D array
+
+shape = (5,)
+
+
+**a[:, 2:7:1]**
+
+第一维用切片 → 保留行维度
+
+第二维切片 → 得到 2D array
+
+shape = (2, 5)
