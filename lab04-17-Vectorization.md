@@ -363,19 +363,31 @@ print(f"c has shape {c.shape}")
 
 # 5 Matrices  矩阵
 ## 5.1 Abstract
-Matrices, are two dimensional arrays. The elements of a matrix are all of the same type. In notation, matrices are denoted with capitol, bold letter such as x . In this and other labs, m is often the number of rows and n the number of columns. The elements of a matrix can be referenced with a two dimensional index. In math settings, numbers in the index typically run from 1 to n. In computer science and these labs, indexing will run from 0 to n-1.
+Matrices, are two dimensional arrays. The elements of a matrix are all of the same type. 
+
+In notation, matrices are denoted with capitol, bold letter such as **X** . 
+
+In this and other labs, **m** is often **the number of rows** and **n** **the number of columns**. 
+
+The elements of a matrix can be referenced with a two dimensional index. 
+
+- In math settings, numbers in the index typically run **from 1 to n**. 
+
+- In computer science and these labs, indexing will run **from 0 to n-1**.
 
 <img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/6e0041d2-841d-46c5-954b-21e6f5fed26a" />
 
 Generic Matrix Notation, 1st index is row, 2nd is column
 ## 5.2 NumPy Arrays
-NumPy's basic data structure is an indexable, n-dimensional array containing elements of the same type (dtype). These were described earlier. Matrices have a two-dimensional (2-D) index [m,n].
+NumPy's basic data structure is an indexable, n-dimensional array containing elements of the same type (dtype). 
+
+Matrices have a two-dimensional (2-D) index [m,n].
 
 In Course 1, 2-D matrices are used to hold training data. Training data is m examples by n features creating an (m,n) array. Course 1 does not do operations directly on matrices but typically extracts an example as a vector and operates on that. Below you will review:
 
 - data creation
-- 
 - slicing and indexing
+  
 ## 5.3 Matrix Creation
 The same functions that created 1-D vectors will create 2-D or n-D arrays. Here are some examples
 
@@ -391,11 +403,12 @@ a = np.random.random_sample((1, 1))
 print(f"a shape = {a.shape}, a = {a}")
 ```
 
-==========
+<img width="350" height="100" alt="image" src="https://github.com/user-attachments/assets/bb29128b-c067-45c1-a950-493c1f46b911" />
+
 
 One can also manually specify data. Dimensions are specified with additional brackets matching the format in the printing above.
 ```python
-# NumPy routines which allocate memory and fill with user specified values
+# NumPy routines which allocate memory and fill with user specified values  NumPy例程分配内存并填充用户指定的值
 a = np.array([[5], [4], [3]]);   print(f" a shape = {a.shape}, np.array: a = {a}")
 a = np.array([[5],   # One can also
               [4],   # separate values
@@ -403,39 +416,46 @@ a = np.array([[5],   # One can also
 print(f" a shape = {a.shape}, np.array: a = {a}")
 ```
 
-============
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/4b60f3a8-d1ba-459e-9fa6-f8fda8f6a48b" />
 
 ## 5.4 Operations on Matrices
 Let's explore some operations using matrices.
 ### 5.4.1 Indexing  索引
 Matrices include a second index. The two indexes describe [row, column]. Access can either return an element or a row/column. See below:
 ```python
+
 #vector indexing operations on matrices
-a = np.arange(6).reshape(-1, 2)   #reshape is a convenient way to create matrices
+a = np.arange(6).reshape(-1, 2)   #reshape is a convenient way to create matrices 是一种创建矩阵的方便方法
 print(f"a.shape: {a.shape}, \na= {a}")
 
-#access an element
-print(f"\na[2,0].shape:   {a[2, 0].shape}, a[2,0] = {a[2, 0]},     type(a[2,0]) = {type(a[2, 0])} Accessing an element returns a scalar\n")
+#access an element  访问元素
+print(f"\na[2,0].shape:{a[2, 0].shape},  a[2,0]={a[2, 0]},  type(a[2,0]) = {type(a[2, 0])} Accessing an element returns a scalar\n")
 
-#access a row
-print(f"a[2].shape:   {a[2].shape}, a[2]   = {a[2]}, type(a[2])   = {type(a[2])}")
+#access a row  访问一行
+print(f"a[2].shape:{a[2].shape},  a[2]= {a[2]},  type(a[2])= {type(a[2])}")
 ```
 
-=========
+<img width="1277" height="271" alt="image" src="https://github.com/user-attachments/assets/52accb81-fb19-4ed8-b21f-c05713f30d41" />
 
-It is worth drawing attention to the last example. Accessing a matrix by just specifying the row will return a 1-D vector.
+np.arange(6)，生成一个 一维数组，包含从 0 到 5 的整数；
 
-**Reshape**
+reshape(a, b) 用来改变数组形状，-1 让 NumPy 自动推断该维度，前提是数据总量不变。
 
-The previous example used reshape to shape the array.
+Accessing a matrix by just specifying the row will return a 1-D vector.
+
+**Reshape变形**
+
+The previous example used **reshape** to shape the array.
 
 a = np.arange(6).reshape(-1, 2) 
 
-This line of code first created a 1-D Vector of six elements. It then reshaped that vector into a 2-D array using the reshape command. This could have been written:
+This line of code first created a 1-D Vector of six elements. It then reshaped that vector into a 2-D array using the reshape command. 
 
-a = np.arange(6).reshape(3, 2) 
+This could have been written:a = np.arange(6).reshape(3, 2) 
 
-To arrive at the same 3 row, 2 column array. The -1 argument tells the routine to compute the number of rows given the size of the array and the number of columns.
+To arrive at the same 3 row, 2 column array. 
+
+The -1 argument tells the routine to compute the number of rows given the size of the array and the number of columns.
 
 ### 5.4.2 Slicing   切片
 Slicing creates an array of indices using a set of three values (start:stop:step). A subset of values is also valid. Its use is best explained by example:
@@ -459,7 +479,7 @@ print("a[1,:] = ", a[1,:], ",  a[1,:].shape =", a[1,:].shape, "a 1-D array")
 print("a[1]   = ", a[1],   ",  a[1].shape   =", a[1].shape, "a 1-D array")
 ```
 
-=========
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/31406ee5-e8b6-468c-9409-9c6d16fdcb72" />
 
 
 
