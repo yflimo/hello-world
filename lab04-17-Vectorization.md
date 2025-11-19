@@ -14,7 +14,7 @@ Python is the programming language we will be using in this course. It has a set
 NumPy is a library that extends the base capabilities of python to add a richer data set including more numeric types, vectors, matrices, and many matrix functions.
 
 NumPy and python work together fairly seamlessly. Python arithmetic operators work on NumPy data types and many NumPy functions will accept python data types.
-# 4 Vectors
+# 4 Vectors   向量
 ## 4.1 Abstract
 <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/9b650d75-9a8e-477d-a287-01b745657307" />
 
@@ -132,7 +132,7 @@ np.array([5,4,3,2]) and np.array([5.,4,3,2]) have all created a one-dimensional 
 
 ## 4.4 Operations on Vectors
 Let's explore some operations using vectors.
-### 4.4.1 Indexing
+### 4.4.1 Indexing  索引
 Elements of vectors can be accessed via indexing and slicing. NumPy provides a very complete set of indexing and slicing capabilities.
 
 **Indexing** means referring to an element of an array by its position within the array.
@@ -161,7 +161,7 @@ except Exception as e:
 
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/fa53d64c-1ef0-4071-8630-95ef29d31123" />
 
-### 4.4.2 Slicing
+### 4.4.2 Slicing  切片
 Slicing creates an array of indices using a set of three values **(start:stop:step)**. A subset of values is also valid. 
 
   - `start`：Initial value (default: 0
@@ -187,7 +187,7 @@ c = a[:];         print("a[:]     = ", c)
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5cf81dec-f7cf-4268-86db-6fb084e20ed7" />
 
 
-### 4.4.3 Single vector operations
+### 4.4.3 Single vector operations  单一向量操作
 There are a number of useful operations that involve operations on a single vector.
 ```python
 a = np.array([1,2,3,4])
@@ -208,7 +208,7 @@ print(f"b = a**2      : {b}")
 
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/6d1e713b-fc6d-4c06-8e4a-90cf163c8964" />
 
-### 4.4.4 Vector Vector element-wise operations
+### 4.4.4 Vector Vector element-wise operations  矢量-矢量元素级的操作
 Most of the NumPy arithmetic, logical and comparison operations apply to vectors as well. These operators work on an element-by-element basis. For example
 
 $$\mathbf{a} + \mathbf{b} = \sum_{i=0}^{n-1} a_i + b_i$$
@@ -232,7 +232,7 @@ except Exception as e:
 
 <img width="500" height="50" alt="image" src="https://github.com/user-attachments/assets/c646b54b-5e6e-4e85-b42a-6b4ed85d268f" />
 
-### 4.4.5 Scalar Vector operations
+### 4.4.5 Scalar Vector operations   标量-向量操作
 
 Vectors can be 'scaled' by scalar values. A scalar value is just a number. The scalar multiplies all the elements of the vector.
 
@@ -246,7 +246,7 @@ print(f"b = 5 * a : {b}")
 
 <img width="300" height="30" alt="image" src="https://github.com/user-attachments/assets/0694bfce-d3fd-4cd2-8eb1-3e7cb8a312dd" />
 
-### 4.4.6 Vector Vector dot product
+### 4.4.6 Vector Vector dot product   矢量-矢量点积
 The dot product is a mainstay of Linear Algebra and NumPy. This is an operation used extensively in this course and should be well understood. The dot product is shown below.
 
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/ff22404b-27f1-43f9-8631-c4ad9528cae7" />
@@ -306,7 +306,7 @@ print(f"NumPy 1-D np.dot(b, a) = {c}, np.dot(a, b).shape = {c.shape} ")
 一维数组做dot得到的结果是纯标量（scalar）,不是数组，因此没有维度。一个真正的 0 维标量
 
 Above, you will note that the results for 1-D matched our implementation.
-### 4.4.7 The Need for Speed: vector vs for loop
+### 4.4.7 The Need for Speed: vector vs for loop  运算提速：矢量与for循环的关系
 We utilized the NumPy library because it improves speed memory efficiency. Let's demonstrate:
 
 ```python
@@ -352,12 +352,16 @@ X = np.array([[1],[2],[3],[4]])
 w = np.array([2])
 c = np.dot(X[1], w)
 
+print(f"X[1] = {X[1]}")
+print(f"c = {c}")
 print(f"X[1] has shape {X[1].shape}")
 print(f"w has shape {w.shape}")
 print(f"c has shape {c.shape}")
 ```
 
-# 5 Matrices
+<img width="200" height="180" alt="image" src="https://github.com/user-attachments/assets/aac47fd6-e617-45fd-a49d-86c4d918e697" />
+
+# 5 Matrices  矩阵
 ## 5.1 Abstract
 Matrices, are two dimensional arrays. The elements of a matrix are all of the same type. In notation, matrices are denoted with capitol, bold letter such as x . In this and other labs, m is often the number of rows and n the number of columns. The elements of a matrix can be referenced with a two dimensional index. In math settings, numbers in the index typically run from 1 to n. In computer science and these labs, indexing will run from 0 to n-1.
 
@@ -403,7 +407,7 @@ print(f" a shape = {a.shape}, np.array: a = {a}")
 
 ## 5.4 Operations on Matrices
 Let's explore some operations using matrices.
-### 5.4.1 Indexing
+### 5.4.1 Indexing  索引
 Matrices include a second index. The two indexes describe [row, column]. Access can either return an element or a row/column. See below:
 ```python
 #vector indexing operations on matrices
@@ -433,7 +437,7 @@ a = np.arange(6).reshape(3, 2)
 
 To arrive at the same 3 row, 2 column array. The -1 argument tells the routine to compute the number of rows given the size of the array and the number of columns.
 
-### 5.4.2 Slicing
+### 5.4.2 Slicing   切片
 Slicing creates an array of indices using a set of three values (start:stop:step). A subset of values is also valid. Its use is best explained by example:
 ```python
 #vector 2-D slicing operations
