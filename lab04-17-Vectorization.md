@@ -147,7 +147,7 @@ NumPy starts indexing at zero so the 3rd element of an vector a is a[2].
 a = np.arange(10)
 print(a)
 
-#access an element 访问单个元素
+#access an element 访问单个元素,返回值为标量，所以shape为空
 print(f"a[2].shape: {a[2].shape} a[2]  = {a[2]}, Accessing an element returns a scalar")
 
 # access the last element, negative indexes count from the end  访问最后一个元素，负数索引从末尾开始计算
