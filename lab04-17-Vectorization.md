@@ -49,18 +49,17 @@ This can either be a single value for a 1-D result or a tuple (n,m,...) specifyi
 
 Below are examples of creating vectors using these routines.
 ```python
-# 默认float
 #括号内用int整型表示，生成float（默认 float64） 4个0
 a = np.zeros(4);                print(f"np.zeros(4) :   a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #括号内用tuple元组表示，生成float（默认 float64） 一维4个0.
-a = np.zeros((4,));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.zeros((4,));             print(f"np.zeros((4,)) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #生成float（默认 float64） 二维  4行*2列 4*2=8个0.
-a = np.zeros((4,2));             print(f"np.zeros(4,) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.zeros((4,2));             print(f"np.zeros((4,2)) :  a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #0-1随机数  float
 a = np.random.random_sample(4); print(f"np.random.random_sample(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
-<img width="800" height="150" alt="image" src="https://github.com/user-attachments/assets/b193d455-2202-4e3a-8e68-0067131590f4" />
+<img width="800" height="150" alt="image" src="https://github.com/user-attachments/assets/7f620826-1293-431e-b88a-2679149a1083" />
 
 Some data creation routines do not take a shape tuple:
 ```python
@@ -76,18 +75,17 @@ np.arange([start,] stop[, step])
 #float 连续递增数字
 a = np.arange(4.);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #int 连续递增数字
-a = np.arange(4);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.arange(4);              print(f"np.arange(4):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 # np.arange([start,] stop[, step])  start：起始值（默认 0） stop：结束值（不包含 stop） step：步长（默认 1） 返回：从 start 到 < stop 的数组，按照步长 step 递增。
 #float [4,6)每次增加0.5的所有数字
-a = np.arange(4,6,0.5);              print(f"np.arange(4.):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.arange(4,6,0.5);              print(f"np.arange(4,6,0.5):     a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #一维 生成4个随机0-1的数字 float
 a = np.random.rand(4);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 #二维 float  2行*3列 2*3个随机0-1的数字
-a = np.random.rand(2,3);          print(f"np.random.rand(4): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
+a = np.random.rand(2,3);          print(f"np.random.rand(2,3): a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
 ```
 
-<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/1f9d25c6-5c6a-413b-bbe1-c0793627fa03" />
-
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/05e25a02-5935-4fc9-97b5-fafb8bdd56cb" />
 
 values can be specified manually as well.
 ```python
